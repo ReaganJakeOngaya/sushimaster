@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/sushi.png" />
+    <link rel="icon" type="image/png" href="/sushilogo.png" />
     <link rel="stylesheet" href="css/style.css">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-    <title>Sushi.Master</title>
+    <title>SushiKing</title>
   </head>
   <body>
     <header>
       <nav class="header__nav">
         <div class="header__logo">
-          <h4 data-aos="fade-down">Sushi.Master</h4>
+          <h4 data-aos="fade-down" ><a href="#hero">SushiKing</a></h4>
           <div class="header__logo-overlay"></div>
         </div>
 
@@ -21,14 +21,20 @@
           <li>
             <a href="#menu">Menu</a>
           </li>
-          <li>
+          <!-- <li>
             <a href="#food">Food</a>
+          </li> -->
+          <li>
+            <a href="#trending">Trending</a>
           </li>
           <li>
             <a href="#services">Services</a>
           </li>
           <li>
-            <a href="#about-us">About Us</a>
+            <a href="#about-us">About-Us</a>
+          </li>
+          <li>
+            <a href="./pages/order.html">Order</a>
           </li>
           <li>
             <img src="assets/search.svg" alt="search" />
@@ -43,8 +49,8 @@
       </nav>
     </header>
 
-    <section class="hero">
-      <div class="hero-image">
+    <section class="hero" id="hero">
+      <div class="hero-image" >
         <img 
           src="assets/sushi-1.png"
           alt="sushi"
@@ -112,7 +118,7 @@
       </div>
     </section>
 
-    <section class="popular-foods" id="menu">
+    <section class="popular-foods" id="menu" >
       <h2 class="popular-foods__title" data-aos="flip-up">Popular Food / 人気</h2>
 
       <div class="popular-foods__filters sushi__hide-scrollbar" data-aos="fade-up">
@@ -186,7 +192,7 @@
       </button>
     </section>
 
-    <section class="trending" id="food">
+    <section class="trending" id="trending">
       <section class="trending-sushi">
         <div class="trending__content" data-aos="fade-right">
           <p class="sushi__subtitle">What’s Trending / トレンド</p>
@@ -333,7 +339,7 @@
 
     <footer class="footer flex-between">
       <h3 class="footer__logo">
-        <span>Sushi</span>.Master
+        <span>Sushi</span>King
       </h3>
 
       <ul class="footer__nav">

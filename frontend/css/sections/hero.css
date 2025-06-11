@@ -8,7 +8,7 @@
   margin: 0 auto;
   min-height: 90vh;
   align-items: center;
-  background: linear-gradient(135deg, #fefefe 0%, #f8f6f3 100%);
+  background: linear-gradient(135deg, #f8e8c3 0%, #ffd79c 100%);
 }
 
 .hero-image {
@@ -38,6 +38,7 @@
   top: 20%;
   right: -10%;
   font-size: 8rem;
+  gap: 20px;
   font-weight: 900;
   color: rgba(111, 92, 31, 0.1);
   writing-mode: vertical-rl;
@@ -78,7 +79,7 @@
   color: #2c1810;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #2c1810 0%, #8b4513 100%);
+  background: linear-gradient(135deg, #d4af37 0%, #b35817 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -86,7 +87,7 @@
 
 .hero-content-info p {
   font-size: 1.2rem;
-  color: #6b5b73;
+  color: #443b48;
   line-height: 1.6;
   margin-bottom: 2.5rem;
   max-width: 90%;
@@ -166,7 +167,7 @@
   align-items: center;
   gap: 2rem;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.8);
+  background: #ebce6e;
   border-radius: 20px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(212, 175, 55, 0.1);

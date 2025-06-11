@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/sushilogo.png" />
+    <link rel="stylesheet" href="../css/sections/order.css" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <title>Order | SushiKing</title>
+  </head>
+  <body>
+    <header>
+      <nav class="header__nav">
+        <div class="header__logo">
+          <h4 data-aos="fade-down" ><a href="#hero">SushiKing</a></h4>
+          <div class="header__logo-overlay"></div>
+        </div>
+
+        <ul class="header__menu" data-aos="fade-down">
+          <li>
+            <a href="#menu">Menu</a>
+          </li>
+          <!-- <li>
+            <a href="#food">Food</a>
+          </li> -->
+          <li>
+            <a href="#trending">Trending</a>
+          </li>
+          <li>
+            <a href="#services">Services</a>
+          </li>
+          <li>
+            <a href="#about-us">About-Us</a>
+          </li>
+          <li>
+            <a href="./pages/order.html">Order</a>
+          </li>
+          <li>
+            <img src="assets/search.svg" alt="search" />
+          </li>
+        </ul>
+
+        <ul class="header__menu-mobile" data-aos="fade-down">
+          <li>
+            <img src="assets/menu.svg" alt="menu" />
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="order-page">
+      <section class="order-hero" data-aos="fade-down">
+        <h1>Place Your Order</h1>
+        <p>Delicious Japanese cuisine delivered to your door.</p>
+      </section>
+
+      <section class="order-form-section" data-aos="fade-up">
+        <form class="order-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="address">Delivery Address</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="food">Select Food Item</label>
+            <select id="food" name="food">
+              <option value="chezu">Chezu Sushi - $21.00</option>
+              <option value="original">Original Sushi - $19.00</option>
+              <option value="ramen">Ramen Legendo - $13.00</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1" />
+          </div>
+
+          <button type="submit" class="order-button">Place Order</button>
+        </form>
+      </section>
+
+      <section class="order-info" data-aos="fade-up">
+        <h2>Why Order from SushiKing?</h2>
+        <ul>
+          <li>✔ Authentic Japanese taste</li>
+          <li>✔ Fast & fresh delivery</li>
+          <li>✔ Secure payment options</li>
+          <li>✔ 24/7 customer support</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer flex-between">
+      <h3 class="footer__logo">
+        <span>Sushi</span>King
+      </h3>
+
+      <ul class="footer__nav">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#food">Food</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about-us">About Us</a></li>
+      </ul>
+
+      <ul class="footer__social">
+        <li class="flex-center">
+          <img src="assets/facebook.svg" alt="facebook" />
+        </li>
+        <li class="flex-center">
+          <img src="assets/instagram.svg" alt="instagram" />
+        </li>
+        <li class="flex-center">
+          <img src="assets/twitter.svg" alt="twitter" />
+        </li>
+      </ul>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init();</script>
+  </body>
+</html>
