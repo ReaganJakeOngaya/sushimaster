@@ -1,0 +1,364 @@
+/* Trending Section Styles */
+.trending {
+  padding: 6rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #f8f6f3 0%, #ffffff 50%, #f8f6f3 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.trending::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.trending::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  right: -10%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(139, 69, 19, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.trending-sushi,
+.trending-drinks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.trending-drinks {
+  margin-bottom: 0;
+}
+
+.trending__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.trending__image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trending__image img {
+  width: 300px;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(212, 175, 55, 0.25));
+  transition: transform 0.3s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.trending__image:hover img {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.trending__arrow {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
+  border: 2px solid rgba(212, 175, 55, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.trending__arrow:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: rgba(212, 175, 55, 0.4);
+  transform: scale(1.1);
+}
+
+.trending__arrow img {
+  width: 24px;
+  height: 24px;
+  filter: none;
+}
+
+.trending__arrow-left {
+  top: 20%;
+  left: 10%;
+  animation: bounce-left 2s ease-in-out infinite;
+}
+
+.trending__arrow-bottom {
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce-up 2s ease-in-out infinite;
+}
+
+.trending__arrow-top {
+  top: 20%;
+  right: 50%;
+  transform: translateX(50%);
+  animation: bounce-down 2s ease-in-out infinite;
+}
+
+.trending__arrow-right {
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  animation: bounce-right 2s ease-in-out infinite;
+}
+
+@keyframes bounce-left {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-10px); }
+}
+
+@keyframes bounce-right {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-50%) translateX(10px); }
+}
+
+@keyframes bounce-up {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+@keyframes bounce-down {
+  0%, 100% { transform: translateX(50%) translateY(0); }
+  50% { transform: translateX(50%) translateY(10px); }
+}
+
+.trending__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.trending__list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.trending__list li:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: rgba(212, 175, 55, 0.3);
+  transform: translateX(5px);
+}
+
+.trending__icon {
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(135deg, #d4af37, #b8941f);
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.trending__list li:hover .trending__icon {
+  transform: scale(1.1);
+}
+
+.trending__icon img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+}
+
+.trending__list li p {
+  font-weight: 500;
+  color: #2c1810;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.trending__discover {
+  position: relative;
+  text-align: center;
+  margin: 4rem 0;
+  z-index: 1;
+}
+
+.trending__discover p {
+  font-size: 8rem;
+  font-weight: 900;
+  color: rgba(212, 175, 55, 0.1);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  user-select: none;
+  background: linear-gradient(45deg, rgba(212, 175, 55, 0.1), rgba(139, 69, 19, 0.1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.3; }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .trending {
+    padding: 4rem 4%;
+  }
+  
+  .trending-sushi,
+  .trending-drinks {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .trending-sushi .trending__content {
+    order: 2;
+  }
+  
+  .trending-sushi .trending__image {
+    order: 1;
+  }
+  
+  .trending__image {
+    height: 350px;
+  }
+  
+  .trending__image img {
+    width: 250px;
+  }
+  
+  .trending__discover p {
+    font-size: 6rem;
+    letter-spacing: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .trending {
+    padding: 3rem 4%;
+  }
+  
+  .trending-sushi,
+  .trending-drinks {
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .trending__image {
+    height: 300px;
+  }
+  
+  .trending__image img {
+    width: 200px;
+  }
+  
+  .trending__arrow {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .trending__arrow img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .trending__list {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .trending__discover p {
+    font-size: 4rem;
+    letter-spacing: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .trending {
+    padding: 2rem 3%;
+  }
+  
+  .trending-sushi,
+  .trending-drinks {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .trending__image {
+    height: 250px;
+  }
+  
+  .trending__image img {
+    width: 160px;
+  }
+  
+  .trending__arrow {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .trending__arrow img {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .trending__list li {
+    padding: 0.6rem;
+  }
+  
+  .trending__icon {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .trending__icon img {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .trending__list li p {
+    font-size: 0.9rem;
+  }
+  
+  .trending__discover p {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+}
