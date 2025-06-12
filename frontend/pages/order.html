@@ -1,132 +1,210 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SushiKing - Order</title>
     <link rel="icon" type="image/png" href="/sushilogo.png" />
-    <link rel="stylesheet" href="../css/sections/order.css" />
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-    <title>Order | SushiKing</title>
-  </head>
-  <body>
-    <header>
-      <nav class="header__nav">
-        <div class="header__logo">
-          <h4 data-aos="fade-down" ><a href="#hero">SushiKing</a></h4>
-          <div class="header__logo-overlay"></div>
-        </div>
-
-        <ul class="header__menu" data-aos="fade-down">
-          <li>
-            <a href="#menu">Menu</a>
-          </li>
-          <!-- <li>
-            <a href="#food">Food</a>
-          </li> -->
-          <li>
-            <a href="#trending">Trending</a>
-          </li>
-          <li>
-            <a href="#services">Services</a>
-          </li>
-          <li>
-            <a href="#about-us">About-Us</a>
-          </li>
-          <li>
-            <a href="./pages/order.html">Order</a>
-          </li>
-          <li>
-            <img src="assets/search.svg" alt="search" />
-          </li>
-        </ul>
-
-        <ul class="header__menu-mobile" data-aos="fade-down">
-          <li>
-            <img src="assets/menu.svg" alt="menu" />
-          </li>
-        </ul>
-      </nav>
+    <link rel="stylesheet" href="../css/order/order.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="header__nav">
+            <div class="header__logo">
+                <h4  data-aos="fade-down"><a href="../index.html">SushiKing</a></h4>
+            </div>
+            <a  data-aos="fade-down" href="../index.html" class="back-btn">
+                ← Back to Home
+            </a>
+        </nav>
     </header>
 
-    <main class="order-page">
-      <section class="order-hero" data-aos="fade-down">
-        <h1>Place Your Order</h1>
-        <p>Delicious Japanese cuisine delivered to your door.</p>
-      </section>
+    <div class="container">
+        <section class="menu-section" data-aos="fade-right">
+            <h2 data-aos="fade-up" class="section-title">Our Menu</h2>
+            
+            <div class="category">
+                <h3 class="category-title" data-aos="fade-up">🍣 Sushi</h3>
+                <div class="menu-grid" data-aos="fade-up">
+                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Chezu Sushi", "price": 21.00, "description": "Premium cheese sushi with fresh ingredients"}'>
+                        <div class="item-image">🍣</div>
+                        <div class="item-name">Chezu Sushi</div>
+                        <div class="item-description">Premium cheese sushi with fresh ingredients</div>
+                        <div class="item-bottom">
+                            <div class="item-price">$21.00</div>
+                            <button class="add-btn">Add to Cart</button>
+                        </div>
+                    </div>
 
-      <section class="order-form-section" data-aos="fade-up">
-        <form class="order-form">
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required />
-          </div>
+                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Original Sushi", "price": 19.00, "description": "Traditional Japanese sushi made with finest fish"}'>
+                        <div class="item-image">🍣</div>
+                        <div class="item-name">Original Sushi</div>
+                        <div class="item-description">Traditional Japanese sushi made with finest fish</div>
+                        <div class="item-bottom">
+                            <div class="item-price">$19.00</div>
+                            <button class="add-btn">Add to Cart</button>
+                        </div>
+                    </div>
 
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required />
-          </div>
+                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Nigiri Sushi", "price": 24.00, "description": "Hand-pressed sushi with premium toppings"}'>
+                        <div class="item-image">🍣</div>
+                        <div class="item-name">Nigiri Sushi</div>
+                        <div class="item-description">Hand-pressed sushi with premium toppings</div>
+                        <div class="item-bottom">
+                            <div class="item-price">$24.00</div>
+                            <button class="add-btn">Add to Cart</button>
+                        </div>
+                    </div>
 
-          <div class="form-group">
-            <label for="address">Delivery Address</label>
-            <textarea id="address" name="address" rows="3" required></textarea>
-          </div>
+                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Temaki Sushi", "price": 18.00, "description": "Hand-rolled cone sushi with fresh seaweed"}'>
+                        <div class="item-image">🍣</div>
+                        <div class="item-name">Temaki Sushi</div>
+                        <div class="item-description">Hand-rolled cone sushi with fresh seaweed</div>
+                        <div class="item-bottom">
+                            <div class="item-price">$18.00</div>
+                            <button class="add-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-          <div class="form-group">
-            <label for="food">Select Food Item</label>
-            <select id="food" name="food">
-              <option value="chezu">Chezu Sushi - $21.00</option>
-              <option value="original">Original Sushi - $19.00</option>
-              <option value="ramen">Ramen Legendo - $13.00</option>
-            </select>
-          </div>
+            <div class="category">
+                <h3 data-aos="fade-down" class="category-title">🍜 Ramen & Noodles</h3>
+                <div class="menu-grid">
+                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Ramen Legendo", "price": 13.00, "description": "Legendary ramen with rich broth and tender noodles"}'>
+                        <div class="item-image">🍜</div>
+                        <div class="item-name">Ramen Legendo</div>
+                        <div class="item-description">Legendary ramen with rich broth and tender noodles</div>
+                        <div class="item-bottom">
+                            <div class="item-price">$13.00</div>
+                            <button class="add-btn">Add to Cart</button>
+                        </div>
+                    </div>
 
-          <div class="form-group">
-            <label for="quantity">Quantity</label>
-            <input type="number" id="quantity" name="quantity" min="1" value="1" />
-          </div>
+                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Tonkotsu Ramen", "price": 16.00, "description": "Rich pork bone broth with chashu and egg"}'>
+                        <div class="item-image">🍜</div>
+                        <div class="item-name">Tonkotsu Ramen</div>
+                        <div class="item-description">Rich pork bone broth with chashu and egg</div>
+                        <div class="item-bottom">
+                            <div class="item-price">$16.00</div>
+                            <button class="add-btn">Add to Cart</button>
+                        </div>
+                    </div>
 
-          <button type="submit" class="order-button">Place Order</button>
-        </form>
-      </section>
+                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Udon Noodles", "price": 12.00, "description": "Thick wheat noodles in savory dashi broth"}'>
+                        <div class="item-image">🍜</div>
+                        <div class="item-name">Udon Noodles</div>
+                        <div class="item-description">Thick wheat noodles in savory dashi broth</div>
+                        <div class="item-bottom">
+                            <div class="item-price">$12.00</div>
+                            <button class="add-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-      <section class="order-info" data-aos="fade-up">
-        <h2>Why Order from SushiKing?</h2>
-        <ul>
-          <li>✔ Authentic Japanese taste</li>
-          <li>✔ Fast & fresh delivery</li>
-          <li>✔ Secure payment options</li>
-          <li>✔ 24/7 customer support</li>
-        </ul>
-      </section>
-    </main>
+            <div class="category">
+                <h3 data-aos="fade-down" class="category-title">🍡 Desserts</h3>
+                <div class="menu-grid">
+                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Dango", "price": 8.00, "description": "Sweet rice dumplings with traditional glaze"}'>
+                        <div class="item-image">🍡</div>
+                        <div class="item-name">Dango</div>
+                        <div class="item-description">Sweet rice dumplings with traditional glaze</div>
+                        <div class="item-bottom">
+                            <div class="item-price">$8.00</div>
+                            <button class="add-btn">Add to Cart</button>
+                        </div>
+                    </div>
 
-    <footer class="footer flex-between">
-      <h3 class="footer__logo">
-        <span>Sushi</span>King
-      </h3>
+                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Mochi Ice Cream", "price": 9.00, "description": "Soft mochi filled with premium ice cream"}'>
+                        <div class="item-image">🍡</div>
+                        <div class="item-name">Mochi Ice Cream</div>
+                        <div class="item-description">Soft mochi filled with premium ice cream</div>
+                        <div class="item-bottom">
+                            <div class="item-price">$9.00</div>
+                            <button class="add-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-      <ul class="footer__nav">
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#food">Food</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about-us">About Us</a></li>
-      </ul>
+            <div class="category">
+                <h3 data-aos="fade-down" class="category-title">🍵 Japanese Drinks</h3>
+                <div class="menu-grid">
+                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Oruncha Tea", "price": 5.00, "description": "Traditional Japanese green tea"}'>
+                        <div class="item-image">🍵</div>
+                        <div class="item-name">Oruncha Tea</div>
+                        <div class="item-description">Traditional Japanese green tea</div>
+                        <div class="item-bottom">
+                            <div class="item-price">$5.00</div>
+                            <button class="add-btn">Add to Cart</button>
+                        </div>
+                    </div>
 
-      <ul class="footer__social">
-        <li class="flex-center">
-          <img src="assets/facebook.svg" alt="facebook" />
-        </li>
-        <li class="flex-center">
-          <img src="assets/instagram.svg" alt="instagram" />
-        </li>
-        <li class="flex-center">
-          <img src="assets/twitter.svg" alt="twitter" />
-        </li>
-      </ul>
-    </footer>
+                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Sakura Tea", "price": 6.00, "description": "Delicate cherry blossom flavored tea"}'>
+                        <div class="item-image">🌸</div>
+                        <div class="item-name">Sakura Tea</div>
+                        <div class="item-description">Delicate cherry blossom flavored tea</div>
+                        <div class="item-bottom">
+                            <div class="item-price">$6.00</div>
+                            <button class="add-btn">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Mugicha", "price": 4.50, "description": "Refreshing barley tea, served cold"}'>
+                        <div class="item-image">🍵</div>
+                        <div class="item-name">Mugicha</div>
+                        <div class="item-description">Refreshing barley tea, served cold</div>
+                        <div class="item-bottom">
+                            <div class="item-price">$4.50</div>
+                            <button class="add-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cart-section" data-aos="fade-left">
+            <h2 class="section-title">Your Order</h2>
+            
+            <div class="cart-content">
+                <div class="cart-empty" id="cartEmpty">
+                    <div class="cart-empty-icon">🛒</div>
+                    <p>Your cart is empty</p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Add some delicious items to get started!</p>
+                </div>
+
+                <div class="cart-items" id="cartItems" style="display: none;"></div>
+
+                <div class="order-summary" id="orderSummary" style="display: none;">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax (8.5%):</span>
+                        <span id="tax">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Delivery Fee:</span>
+                        <span id="delivery">$3.99</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="total">$0.00</span>
+                    </div>
+
+                    <button class="checkout-btn" id="checkoutBtn" disabled>
+                        Proceed to Checkout
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>AOS.init();</script>
-  </body>
+    <script src="../js/order.js"></script>
+</body>
 </html>
