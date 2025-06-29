@@ -6,7 +6,7 @@
         "status": 200
       },
       {
-        "src": " ",
+        "src": "/(.*)",
         "dest": "/index.html",
         "status": 200
       }
