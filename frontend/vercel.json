@@ -2,19 +2,20 @@
     "routes": [
       {
         "src": "/order",
-        "dest": "/order.html"
+        "dest": "/order.html",
+        "headers": { "Content-Type": "text/html" }
       },
       {
-        "src": "/order.html",
-        "headers": {
-          "Cache-Control": "public, max-age=3600"
-        }
+        "src": "/js/(.*)",
+        "headers": { "Content-Type": "text/javascript" }
+      },
+      {
+        "src": "/css/(.*)",
+        "headers": { "Content-Type": "text/css" }
       },
       {
         "src": "/(.*)",
-        "dest": "/index.html",
-        "status": 200
+        "dest": "/index.html"
       }
-    ],
-    "cleanUrls": true
-  }
+    ]
+}
