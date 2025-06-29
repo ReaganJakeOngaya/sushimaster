@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,196 +6,476 @@
     <title>SushiKing - Order</title>
     <link rel="icon" type="image/png" href="/sushilogo.png" />
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../css/order/order.css">
 </head>
 <body>
+    <!-- Header -->
     <header class="header">
         <nav class="header__nav">
             <div class="header__logo">
-                <h4  data-aos="fade-down"><a href="../index.html">SushiKing</a></h4>
+                <h4 data-aos="fade-down">
+                    <a href="../index.html">
+                        <i class="fas fa-fish"></i>
+                        SushiKing
+                    </a>
+                </h4>
             </div>
-            <a  data-aos="fade-down" href="../index.html" class="back-btn">
-                ← Back to Home
+            <a data-aos="fade-down" href="../index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                Back to Home
             </a>
         </nav>
     </header>
 
-    <div class="container">
+    <!-- Order Container -->
+    <div class="order-container">
+        <!-- Menu Section -->
         <section class="menu-section" data-aos="fade-right">
-            <h2 data-aos="fade-up" class="section-title">Our Menu</h2>
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-accent">Our</span> Menu
+                </h2>
+                <p class="section-subtitle">Authentic Japanese cuisine crafted with passion</p>
+            </div>
             
-            <div class="category">
-                <h3 class="category-title" data-aos="fade-up">🍣 Sushi</h3>
+            <!-- Category Filters -->
+            <div class="category-filters" data-aos="fade-up">
+                <button class="filter-btn active" data-category="all">
+                    <i class="fas fa-utensils"></i>
+                    All Items
+                </button>
+                <button class="filter-btn" data-category="sushi">
+                    <i class="fas fa-fish"></i>
+                    Sushi
+                </button>
+                <button class="filter-btn" data-category="ramen">
+                    <i class="fas fa-bowl-food"></i>
+                    Ramen
+                </button>
+                <button class="filter-btn" data-category="desserts">
+                    <i class="fas fa-ice-cream"></i>
+                    Desserts
+                </button>
+                <button class="filter-btn" data-category="drinks">
+                    <i class="fas fa-mug-hot"></i>
+                    Drinks
+                </button>
+            </div>
+
+            <!-- Sushi Category -->
+            <div class="category" data-category="sushi">
+                <h3 class="category-title" data-aos="fade-up">
+                    <span class="category-icon">🍣</span>
+                    Premium Sushi
+                </h3>
                 <div class="menu-grid" data-aos="fade-up">
-                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Chezu Sushi", "price": 21.00, "description": "Premium cheese sushi with fresh ingredients"}'>
-                        <div class="item-image">🍣</div>
-                        <div class="item-name">Chezu Sushi</div>
-                        <div class="item-description">Premium cheese sushi with fresh ingredients</div>
-                        <div class="item-bottom">
-                            <div class="item-price">$21.00</div>
-                            <button class="add-btn">Add to Cart</button>
+                    <div class="menu-item" data-item='{"name": "Chezu Sushi", "price": 21.00, "description": "Premium cheese sushi with fresh ingredients", "category": "sushi"}'>
+                        <div class="item-badge">Popular</div>
+                        <div class="item-image">
+                            <div class="image-placeholder">🍣</div>
+                            <div class="item-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <h4 class="item-name">Chezu Sushi</h4>
+                            <p class="item-description">Premium cheese sushi with fresh ingredients</p>
+                            <div class="item-tags">
+                                <span class="tag">Premium</span>
+                                <span class="tag">Fresh</span>
+                            </div>
+                            <div class="item-bottom">
+                                <div class="item-price">
+                                    <span class="price-value">$21.00</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="fas fa-plus"></i>
+                                    Add to Cart
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Original Sushi", "price": 19.00, "description": "Traditional Japanese sushi made with finest fish"}'>
-                        <div class="item-image">🍣</div>
-                        <div class="item-name">Original Sushi</div>
-                        <div class="item-description">Traditional Japanese sushi made with finest fish</div>
-                        <div class="item-bottom">
-                            <div class="item-price">$19.00</div>
-                            <button class="add-btn">Add to Cart</button>
+                    <div class="menu-item" data-item='{"name": "Original Sushi", "price": 19.00, "description": "Traditional Japanese sushi made with finest fish", "category": "sushi"}'>
+                        <div class="item-image">
+                            <div class="image-placeholder">🍣</div>
+                            <div class="item-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.6</span>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <h4 class="item-name">Original Sushi</h4>
+                            <p class="item-description">Traditional Japanese sushi made with finest fish</p>
+                            <div class="item-tags">
+                                <span class="tag">Traditional</span>
+                                <span class="tag">Classic</span>
+                            </div>
+                            <div class="item-bottom">
+                                <div class="item-price">
+                                    <span class="price-value">$19.00</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="fas fa-plus"></i>
+                                    Add to Cart
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Nigiri Sushi", "price": 24.00, "description": "Hand-pressed sushi with premium toppings"}'>
-                        <div class="item-image">🍣</div>
-                        <div class="item-name">Nigiri Sushi</div>
-                        <div class="item-description">Hand-pressed sushi with premium toppings</div>
-                        <div class="item-bottom">
-                            <div class="item-price">$24.00</div>
-                            <button class="add-btn">Add to Cart</button>
+                    <div class="menu-item" data-item='{"name": "Nigiri Sushi", "price": 24.00, "description": "Hand-pressed sushi with premium toppings", "category": "sushi"}'>
+                        <div class="item-badge chef-special">Chef\'s Special</div>
+                        <div class="item-image">
+                            <div class="image-placeholder">🍣</div>
+                            <div class="item-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <h4 class="item-name">Nigiri Sushi</h4>
+                            <p class="item-description">Hand-pressed sushi with premium toppings</p>
+                            <div class="item-tags">
+                                <span class="tag">Hand-pressed</span>
+                                <span class="tag">Premium</span>
+                            </div>
+                            <div class="item-bottom">
+                                <div class="item-price">
+                                    <span class="price-value">$24.00</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="fas fa-plus"></i>
+                                    Add to Cart
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Temaki Sushi", "price": 18.00, "description": "Hand-rolled cone sushi with fresh seaweed"}'>
-                        <div class="item-image">🍣</div>
-                        <div class="item-name">Temaki Sushi</div>
-                        <div class="item-description">Hand-rolled cone sushi with fresh seaweed</div>
-                        <div class="item-bottom">
-                            <div class="item-price">$18.00</div>
-                            <button class="add-btn">Add to Cart</button>
+                    <div class="menu-item" data-item='{"name": "Temaki Sushi", "price": 18.00, "description": "Hand-rolled cone sushi with fresh seaweed", "category": "sushi"}'>
+                        <div class="item-image">
+                            <div class="image-placeholder">🍣</div>
+                            <div class="item-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <h4 class="item-name">Temaki Sushi</h4>
+                            <p class="item-description">Hand-rolled cone sushi with fresh seaweed</p>
+                            <div class="item-tags">
+                                <span class="tag">Hand-rolled</span>
+                                <span class="tag">Fresh</span>
+                            </div>
+                            <div class="item-bottom">
+                                <div class="item-price">
+                                    <span class="price-value">$18.00</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="fas fa-plus"></i>
+                                    Add to Cart
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="category">
-                <h3 data-aos="fade-down" class="category-title">🍜 Ramen & Noodles</h3>
+            <!-- Ramen Category -->
+            <div class="category" data-category="ramen">
+                <h3 class="category-title" data-aos="fade-up">
+                    <span class="category-icon">🍜</span>
+                    Ramen & Noodles
+                </h3>
                 <div class="menu-grid">
-                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Ramen Legendo", "price": 13.00, "description": "Legendary ramen with rich broth and tender noodles"}'>
-                        <div class="item-image">🍜</div>
-                        <div class="item-name">Ramen Legendo</div>
-                        <div class="item-description">Legendary ramen with rich broth and tender noodles</div>
-                        <div class="item-bottom">
-                            <div class="item-price">$13.00</div>
-                            <button class="add-btn">Add to Cart</button>
+                    <div class="menu-item" data-item='{"name": "Ramen Legendo", "price": 13.00, "description": "Legendary ramen with rich broth and tender noodles", "category": "ramen"}'>
+                        <div class="item-badge">Popular</div>
+                        <div class="item-image">
+                            <div class="image-placeholder">🍜</div>
+                            <div class="item-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <h4 class="item-name">Ramen Legendo</h4>
+                            <p class="item-description">Legendary ramen with rich broth and tender noodles</p>
+                            <div class="item-tags">
+                                <span class="tag">Rich Broth</span>
+                                <span class="tag">Tender</span>
+                            </div>
+                            <div class="item-bottom">
+                                <div class="item-price">
+                                    <span class="price-value">$13.00</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="fas fa-plus"></i>
+                                    Add to Cart
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Tonkotsu Ramen", "price": 16.00, "description": "Rich pork bone broth with chashu and egg"}'>
-                        <div class="item-image">🍜</div>
-                        <div class="item-name">Tonkotsu Ramen</div>
-                        <div class="item-description">Rich pork bone broth with chashu and egg</div>
-                        <div class="item-bottom">
-                            <div class="item-price">$16.00</div>
-                            <button class="add-btn">Add to Cart</button>
+                    <div class="menu-item" data-item='{"name": "Tonkotsu Ramen", "price": 16.00, "description": "Rich pork bone broth with chashu and egg", "category": "ramen"}'>
+                        <div class="item-image">
+                            <div class="image-placeholder">🍜</div>
+                            <div class="item-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <h4 class="item-name">Tonkotsu Ramen</h4>
+                            <p class="item-description">Rich pork bone broth with chashu and egg</p>
+                            <div class="item-tags">
+                                <span class="tag">Pork Bone</span>
+                                <span class="tag">Chashu</span>
+                            </div>
+                            <div class="item-bottom">
+                                <div class="item-price">
+                                    <span class="price-value">$16.00</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="fas fa-plus"></i>
+                                    Add to Cart
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Udon Noodles", "price": 12.00, "description": "Thick wheat noodles in savory dashi broth"}'>
-                        <div class="item-image">🍜</div>
-                        <div class="item-name">Udon Noodles</div>
-                        <div class="item-description">Thick wheat noodles in savory dashi broth</div>
-                        <div class="item-bottom">
-                            <div class="item-price">$12.00</div>
-                            <button class="add-btn">Add to Cart</button>
+                    <div class="menu-item" data-item='{"name": "Udon Noodles", "price": 12.00, "description": "Thick wheat noodles in savory dashi broth", "category": "ramen"}'>
+                        <div class="item-image">
+                            <div class="image-placeholder">🍜</div>
+                            <div class="item-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.5</span>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <h4 class="item-name">Udon Noodles</h4>
+                            <p class="item-description">Thick wheat noodles in savory dashi broth</p>
+                            <div class="item-tags">
+                                <span class="tag">Thick Noodles</span>
+                                <span class="tag">Dashi</span>
+                            </div>
+                            <div class="item-bottom">
+                                <div class="item-price">
+                                    <span class="price-value">$12.00</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="fas fa-plus"></i>
+                                    Add to Cart
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="category">
-                <h3 data-aos="fade-down" class="category-title">🍡 Desserts</h3>
+            <!-- Desserts Category -->
+            <div class="category" data-category="desserts">
+                <h3 class="category-title" data-aos="fade-up">
+                    <span class="category-icon">🍡</span>
+                    Sweet Desserts
+                </h3>
                 <div class="menu-grid">
-                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Dango", "price": 8.00, "description": "Sweet rice dumplings with traditional glaze"}'>
-                        <div class="item-image">🍡</div>
-                        <div class="item-name">Dango</div>
-                        <div class="item-description">Sweet rice dumplings with traditional glaze</div>
-                        <div class="item-bottom">
-                            <div class="item-price">$8.00</div>
-                            <button class="add-btn">Add to Cart</button>
+                    <div class="menu-item" data-item='{"name": "Dango", "price": 8.00, "description": "Sweet rice dumplings with traditional glaze", "category": "desserts"}'>
+                        <div class="item-image">
+                            <div class="image-placeholder">🍡</div>
+                            <div class="item-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.6</span>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <h4 class="item-name">Dango</h4>
+                            <p class="item-description">Sweet rice dumplings with traditional glaze</p>
+                            <div class="item-tags">
+                                <span class="tag">Sweet</span>
+                                <span class="tag">Traditional</span>
+                            </div>
+                            <div class="item-bottom">
+                                <div class="item-price">
+                                    <span class="price-value">$8.00</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="fas fa-plus"></i>
+                                    Add to Cart
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Mochi Ice Cream", "price": 9.00, "description": "Soft mochi filled with premium ice cream"}'>
-                        <div class="item-image">🍡</div>
-                        <div class="item-name">Mochi Ice Cream</div>
-                        <div class="item-description">Soft mochi filled with premium ice cream</div>
-                        <div class="item-bottom">
-                            <div class="item-price">$9.00</div>
-                            <button class="add-btn">Add to Cart</button>
+                    <div class="menu-item" data-item='{"name": "Mochi Ice Cream", "price": 9.00, "description": "Soft mochi filled with premium ice cream", "category": "desserts"}'>
+                        <div class="item-badge">Popular</div>
+                        <div class="item-image">
+                            <div class="image-placeholder">🍡</div>
+                            <div class="item-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <h4 class="item-name">Mochi Ice Cream</h4>
+                            <p class="item-description">Soft mochi filled with premium ice cream</p>
+                            <div class="item-tags">
+                                <span class="tag">Soft</span>
+                                <span class="tag">Premium</span>
+                            </div>
+                            <div class="item-bottom">
+                                <div class="item-price">
+                                    <span class="price-value">$9.00</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="fas fa-plus"></i>
+                                    Add to Cart
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="category">
-                <h3 data-aos="fade-down" class="category-title">🍵 Japanese Drinks</h3>
+            <!-- Drinks Category -->
+            <div class="category" data-category="drinks">
+                <h3 class="category-title" data-aos="fade-up">
+                    <span class="category-icon">🍵</span>
+                    Japanese Drinks
+                </h3>
                 <div class="menu-grid">
-                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Oruncha Tea", "price": 5.00, "description": "Traditional Japanese green tea"}'>
-                        <div class="item-image">🍵</div>
-                        <div class="item-name">Oruncha Tea</div>
-                        <div class="item-description">Traditional Japanese green tea</div>
-                        <div class="item-bottom">
-                            <div class="item-price">$5.00</div>
-                            <button class="add-btn">Add to Cart</button>
+                    <div class="menu-item" data-item='{"name": "Oruncha Tea", "price": 5.00, "description": "Traditional Japanese green tea", "category": "drinks"}'>
+                        <div class="item-image">
+                            <div class="image-placeholder">🍵</div>
+                            <div class="item-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.5</span>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <h4 class="item-name">Oruncha Tea</h4>
+                            <p class="item-description">Traditional Japanese green tea</p>
+                            <div class="item-tags">
+                                <span class="tag">Green Tea</span>
+                                <span class="tag">Traditional</span>
+                            </div>
+                            <div class="item-bottom">
+                                <div class="item-price">
+                                    <span class="price-value">$5.00</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="fas fa-plus"></i>
+                                    Add to Cart
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Sakura Tea", "price": 6.00, "description": "Delicate cherry blossom flavored tea"}'>
-                        <div class="item-image">🌸</div>
-                        <div class="item-name">Sakura Tea</div>
-                        <div class="item-description">Delicate cherry blossom flavored tea</div>
-                        <div class="item-bottom">
-                            <div class="item-price">$6.00</div>
-                            <button class="add-btn">Add to Cart</button>
+                    <div class="menu-item" data-item='{"name": "Sakura Tea", "price": 6.00, "description": "Delicate cherry blossom flavored tea", "category": "drinks"}'>
+                        <div class="item-badge chef-special">Seasonal</div>
+                        <div class="item-image">
+                            <div class="image-placeholder">🌸</div>
+                            <div class="item-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <h4 class="item-name">Sakura Tea</h4>
+                            <p class="item-description">Delicate cherry blossom flavored tea</p>
+                            <div class="item-tags">
+                                <span class="tag">Cherry Blossom</span>
+                                <span class="tag">Delicate</span>
+                            </div>
+                            <div class="item-bottom">
+                                <div class="item-price">
+                                    <span class="price-value">$6.00</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="fas fa-plus"></i>
+                                    Add to Cart
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <div data-aos="fade-up" class="menu-item" data-item='{"name": "Mugicha", "price": 4.50, "description": "Refreshing barley tea, served cold"}'>
-                        <div class="item-image">🍵</div>
-                        <div class="item-name">Mugicha</div>
-                        <div class="item-description">Refreshing barley tea, served cold</div>
-                        <div class="item-bottom">
-                            <div class="item-price">$4.50</div>
-                            <button class="add-btn">Add to Cart</button>
+                    <div class="menu-item" data-item='{"name": "Mugicha", "price": 4.50, "description": "Refreshing barley tea, served cold", "category": "drinks"}'>
+                        <div class="item-image">
+                            <div class="image-placeholder">🍵</div>
+                            <div class="item-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.4</span>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <h4 class="item-name">Mugicha</h4>
+                            <p class="item-description">Refreshing barley tea, served cold</p>
+                            <div class="item-tags">
+                                <span class="tag">Barley</span>
+                                <span class="tag">Cold</span>
+                            </div>
+                            <div class="item-bottom">
+                                <div class="item-price">
+                                    <span class="price-value">$4.50</span>
+                                </div>
+                                <button class="add-btn">
+                                    <i class="fas fa-plus"></i>
+                                    Add to Cart
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Cart Section -->
         <section class="cart-section" data-aos="fade-left">
-            <h2 class="section-title">Your Order</h2>
+            <div class="cart-header">
+                <h2 class="section-title">
+                    <i class="fas fa-shopping-cart"></i>
+                    Your Order
+                </h2>
+                <div class="cart-count" id="cartCount">0</div>
+            </div>
             
             <div class="cart-content">
                 <div class="cart-empty" id="cartEmpty">
-                    <div class="cart-empty-icon">🛒</div>
-                    <p>Your cart is empty</p>
-                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Add some delicious items to get started!</p>
+                    <div class="empty-illustration">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Your cart is empty</h3>
+                    <p>Add some delicious items to get started!</p>
                 </div>
 
                 <div class="cart-items" id="cartItems" style="display: none;"></div>
 
                 <div class="order-summary" id="orderSummary" style="display: none;">
-                    <div class="summary-row">
-                        <span>Subtotal:</span>
-                        <span id="subtotal">$0.00</span>
+                    <div class="summary-header">
+                        <h3>Order Summary</h3>
                     </div>
-                    <div class="summary-row">
-                        <span>Tax (8.5%):</span>
-                        <span id="tax">$0.00</span>
-                    </div>
-                    <div class="summary-row">
-                        <span>Delivery Fee:</span>
-                        <span id="delivery">$3.99</span>
-                    </div>
-                    <div class="summary-row total">
-                        <span>Total:</span>
-                        <span id="total">$0.00</span>
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax (8.5%):</span>
+                            <span id="tax">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Delivery Fee:</span>
+                            <span id="delivery">$3.99</span>
+                        </div>
+                        <div class="summary-divider"></div>
+                        <div class="summary-row total">
+                            <span>Total:</span>
+                            <span id="total">$0.00</span>
+                        </div>
                     </div>
 
                     <button class="checkout-btn" id="checkoutBtn" disabled>
+                        <i class="fas fa-credit-card"></i>
                         Proceed to Checkout
                     </button>
                 </div>
