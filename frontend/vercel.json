@@ -6,11 +6,11 @@
         "headers": { "Content-Type": "text/html" }
       },
       {
-        "src": "/js/(.*)",
+        "src": "js/(.*)",
         "headers": { "Content-Type": "text/javascript" }
       },
       {
-        "src": "/css/(.*)",
+        "src": "css/(.*)",
         "headers": { "Content-Type": "text/css" }
       },
       {
