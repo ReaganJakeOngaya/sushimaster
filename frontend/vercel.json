@@ -2,13 +2,19 @@
     "routes": [
       {
         "src": "/order",
-        "dest": "/order.html",
-        "status": 200
+        "dest": "/order.html"
+      },
+      {
+        "src": "/order.html",
+        "headers": {
+          "Cache-Control": "public, max-age=3600"
+        }
       },
       {
         "src": "/(.*)",
         "dest": "/index.html",
         "status": 200
       }
-    ]
-}
+    ],
+    "cleanUrls": true
+  }
