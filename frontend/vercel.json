@@ -1,21 +1,21 @@
-{
-    "routes": [
-      {
-        "src": "/order",
-        "dest": "/order.html",
-        "headers": { "Content-Type": "text/html" }
-      },
-      {
-        "src": "js/(.*)",
-        "headers": { "Content-Type": "text/javascript" }
-      },
-      {
-        "src": "css/(.*)",
-        "headers": { "Content-Type": "text/css" }
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/index.html"
-      }
-    ]
-}
+// {
+//     "routes": [
+//       {
+//         "src": "/order",
+//         "dest": "/order.html",
+//         "headers": { "Content-Type": "text/html" }
+//       },
+//       {
+//         "src": "js/(.*)",
+//         "headers": { "Content-Type": "text/javascript" }
+//       },
+//       {
+//         "src": "css/(.*)",
+//         "headers": { "Content-Type": "text/css" }
+//       },
+//       {
+//         "src": "/(.*)",
+//         "dest": "/index.html"
+//       }
+//     ]
+// }
