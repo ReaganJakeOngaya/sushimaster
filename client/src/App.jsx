@@ -9,9 +9,11 @@ import AdminOrders from './pages/admin/Orders'
 import AdminMenu from './pages/admin/MenuManagement'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import { CartProvider } from './context/CartContext';
 
 function App() {
   return (
+    <CartProvider>
     <BrowserRouter>
       <div className="flex flex-col min-h-screen">
         <Header />
@@ -30,6 +32,7 @@ function App() {
         <Footer />
       </div>
     </BrowserRouter>
+    </CartProvider>
   )
 }
 

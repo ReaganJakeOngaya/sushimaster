@@ -22,7 +22,7 @@ const MenuItem = ({ item, onAddToCart }) => {
         <p className="text-gray-600 text-sm mb-4">{item.description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {item.tags?.map((tag, index) => (
-            <span key={index} className="px-2 py-1 bg-gray-100 text-xs rounded-full">{tag}</span>
+            <span key={index} className="px-2 py-1 bg-gray-300 text-xs rounded-full">{tag}</span>
           ))}
         </div>
         <button

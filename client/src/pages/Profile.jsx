@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useCart } from '../context/CartContext'; // Add this import
 
 const Profile = () => {
   const [user, setUser] = useState({
@@ -9,23 +10,7 @@ const Profile = () => {
     avatar: 'https://randomuser.me/api/portraits/men/32.jpg'
   });
 
-  const [orders, setOrders] = useState([
-    {
-      id: 1,
-      date: '2023-06-15',
-      items: ['Chezu Sushi', 'Original Sushi'],
-      total: 40.00,
-      status: 'Delivered'
-    },
-    {
-      id: 2,
-      date: '2023-06-10',
-      items: ['Ramen Legendo', 'Mochi Ice Cream'],
-      total: 22.00,
-      status: 'Delivered'
-    }
-  ]);
-
+  const { orders } = useCart();
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({ ...user });
 

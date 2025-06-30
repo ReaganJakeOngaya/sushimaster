@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import heroImage from '../assets/sushi-1.png';
+import sushi2 from '../assets/sushi-2.png';
+import sushi3 from '../assets/sushi-3.png';
+import sushi4 from '../assets/sushi-4.png';
+import sushi5 from '../assets/sushi-5.png';
+import sushi10 from '../assets/sushi-10.png';
+import sushi11 from '../assets/sushi-11.png';
+import sushi12 from '../assets/sushi-12.png';
 
 const Home = () => {
   useEffect(() => {
@@ -23,7 +30,7 @@ const Home = () => {
               alt="Sushi"
               className="w-full max-w-md mx-auto lg:mx-0"
             />
-            <h2 className="absolute top-1/4 -right-8 text-6xl md:text-8xl font-bold text-gray-200 -rotate-90 origin-bottom-right">
+            <h2 className="absolute top-1/4 -right-8 text-6xl md:text-8xl font-bold text-gray-300 -rotate-90 origin-bottom-right">
               日本食
             </h2>
             <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full blur-xl -z-10"></div>
@@ -94,14 +101,14 @@ const Home = () => {
           <div className="grid grid-cols-2 gap-4 relative">
             <div className="relative" data-aos="fade-right">
               <img
-                src={require('../assets/sushi-3.png')}
+                src={sushi3}
                 alt="Sushi"
                 className="w-full max-w-xs mx-auto"
               />
             </div>
             <div className="relative mt-16" data-aos="fade-right">
               <img
-                src={require('../assets/sushi-2.png')}
+                src={sushi2}
                 alt="Sushi"
                 className="w-full max-w-xs mx-auto"
               />
@@ -175,20 +182,20 @@ const Home = () => {
               name: 'Chezu Sushi',
               price: 21.0,
               rating: 4.9,
-              image: require('../assets/sushi-12.png'),
+              image: sushi12,
             },
             {
               name: 'Original Sushi',
               price: 19.0,
               rating: 5.0,
-              image: require('../assets/sushi-11.png'),
+              image: sushi11,
               active: true,
             },
             {
               name: 'Ramen Legendo',
               price: 13.0,
               rating: 4.7,
-              image: require('../assets/sushi-10.png'),
+              image: sushi10,
             },
           ].map((item, index) => (
             <div
@@ -240,7 +247,7 @@ const Home = () => {
                 fillRule="evenodd"
                 d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z"
                 clipRule="evenodd"
-              />
+            />
             </svg>
           </button>
         </div>
@@ -291,7 +298,7 @@ const Home = () => {
 
           <div className="relative" data-aos="fade-left">
             <img
-              src={require('../assets/sushi-5.png')}
+              src={sushi5}
               alt="Sushi"
               className="w-full max-w-md mx-auto"
             />
@@ -335,7 +342,7 @@ const Home = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative order-2 lg:order-1" data-aos="fade-right">
             <img
-              src={require('../assets/sushi-4.png')}
+              src={sushi4}
               alt="Drinks"
               className="w-full max-w-md mx-auto"
             />
