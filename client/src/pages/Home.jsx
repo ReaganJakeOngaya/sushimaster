@@ -20,152 +20,184 @@ const Home = () => {
   }, [])
 
   return (
-    <div className="pt-20">
+    <div className="pt-20 bg-gradient-to-b from-slate-50 via-white to-slate-50 overflow-hidden">
       {/* Hero Section */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="relative" data-aos="fade-up">
-            <img
-              src={heroImage}
-              alt="Sushi"
-              className="w-full max-w-md mx-auto lg:mx-0"
-            />
-            <h2 className="absolute top-1/4 -right-8 text-6xl md:text-8xl font-bold text-gray-300 -rotate-90 origin-bottom-right">
-              日本食
-            </h2>
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full blur-xl -z-10"></div>
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        {/* Floating Elements */}
+        <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-orange-400/20 to-pink-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-tr from-blue-400/10 to-purple-500/10 rounded-full blur-3xl animate-pulse delay-700"></div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+          <div className="relative group" data-aos="zoom-in">
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-pink-600 rounded-[3rem] blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-700"></div>
+            <div className="relative bg-gradient-to-br from-white to-orange-50 p-12 rounded-[3rem] shadow-2xl backdrop-blur-sm border border-white/50">
+              <img
+                src={heroImage}
+                alt="Sushi"
+                className="w-full max-w-md mx-auto transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-700"
+              />
+            </div>
+            <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-orange-500 to-pink-600 rounded-3xl rotate-12 flex items-center justify-center shadow-xl">
+              <span className="text-white font-black text-2xl">新鮮</span>
+            </div>
           </div>
 
-          <div className="text-center lg:text-left" data-aos="fade-left">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Feel the taste of Japanese food
+          <div className="text-left space-y-8" data-aos="fade-left">
+            <div className="inline-block">
+              <span className="px-6 py-2 bg-gradient-to-r from-orange-500 to-pink-600 text-white text-sm font-bold rounded-full shadow-lg">
+                🍱 AUTHENTIC JAPANESE CUISINE
+              </span>
+            </div>
+            
+            <h1 className="text-6xl md:text-7xl font-black leading-tight">
+              <span className="bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
+                Taste The
+              </span>
+              <br />
+              <span className="text-slate-900">Art of Japan</span>
             </h1>
-            <p className="text-lg text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0">
-              Feel the taste of the most popular Japanese food from anywhere and
-              anytime.
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-lg font-medium">
+              Experience authentic Japanese flavors delivered to your doorstep. Every bite tells a story of tradition and perfection.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            
+            <div className="flex flex-wrap gap-4">
               <Link
                 to="/menu"
-                className="bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transition-all"
+                className="group relative px-10 py-5 bg-gradient-to-r from-orange-500 to-pink-600 text-white font-bold rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
               >
-                Order Now
-              </Link>
-              <button className="flex items-center justify-center gap-2 border border-primary/30 text-primary px-8 py-3 rounded-full font-medium hover:bg-primary/10 transition-all">
-                <span className="w-5 h-5 rounded-full bg-primary flex items-center justify-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="white"
-                    className="w-3 h-3"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
-                      clipRule="evenodd"
-                    />
+                <span className="relative z-10 flex items-center gap-3">
+                  Order Now
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"/>
                   </svg>
                 </span>
-                How to Order
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+              </Link>
+              
+              <button className="group px-10 py-5 bg-slate-900 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-3">
+                <span className="w-10 h-10 rounded-full bg-gradient-to-r from-orange-500 to-pink-600 flex items-center justify-center">
+                  <svg className="w-4 h-4" fill="white" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </span>
+                Watch Video
               </button>
             </div>
 
-            <div className="mt-12 bg-primary/10 p-6 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-6">
-              <div className="text-center">
-                <h4 className="text-3xl font-bold text-primary">
-                  24<span className="text-secondary">k+</span>
-                </h4>
-                <p className="text-gray-600">Happy Customers</p>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/30">
+            <div className="flex items-center gap-8 pt-8">
+              <div className="flex -space-x-4">
+                {[44, 65, 32, 67].map((num) => (
                   <img
-                    src="https://randomuser.me/api/portraits/women/44.jpg"
+                    key={num}
+                    src={`https://randomuser.me/api/portraits/women/${num}.jpg`}
                     alt="User"
-                    className="w-full h-full object-cover"
+                    className="w-14 h-14 rounded-full border-4 border-white shadow-lg"
                   />
-                </div>
-                <p className="text-gray-600 italic max-w-xs">
-                  "This is the best Japanese food delivery service that ever
-                  existed."
-                </p>
+                ))}
+              </div>
+              <div>
+                <p className="text-3xl font-black text-slate-900">24K+</p>
+                <p className="text-slate-600 font-semibold">Happy Customers</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Bar */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" data-aos="fade-up">
+        <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-12 shadow-2xl">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            {[
+              { number: '500+', label: 'Menu Items', icon: '🍱' },
+              { number: '24K+', label: 'Happy Clients', icon: '😊' },
+              { number: '50+', label: 'Expert Chefs', icon: '👨‍🍳' },
+              { number: '15min', label: 'Avg Delivery', icon: '🚀' }
+            ].map((stat, i) => (
+              <div key={i} className="space-y-2">
+                <div className="text-4xl">{stat.icon}</div>
+                <h4 className="text-4xl font-black text-white">{stat.number}</h4>
+                <p className="text-slate-400 font-semibold">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* About Us Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" id="about-us">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="grid grid-cols-2 gap-4 relative">
-            <div className="relative" data-aos="fade-right">
-              <img
-                src={sushi3}
-                alt="Sushi"
-                className="w-full max-w-xs mx-auto"
-              />
+      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" id="about-us">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="relative" data-aos="fade-right">
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-pink-500/20 rounded-[4rem] blur-3xl"></div>
+            <div className="relative grid grid-cols-2 gap-6">
+              <div className="space-y-6">
+                <div className="bg-white p-8 rounded-3xl shadow-xl border border-orange-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                  <img src={sushi3} alt="Sushi" className="w-full" />
+                </div>
+              </div>
+              <div className="space-y-6 pt-16">
+                <div className="bg-white p-8 rounded-3xl shadow-xl border border-pink-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                  <img src={sushi2} alt="Sushi" className="w-full" />
+                </div>
+              </div>
             </div>
-            <div className="relative mt-16" data-aos="fade-right">
-              <img
-                src={sushi2}
-                alt="Sushi"
-                className="w-full max-w-xs mx-auto"
-              />
+            <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-gradient-to-br from-orange-500 to-pink-600 rounded-3xl rotate-12 flex items-center justify-center shadow-2xl">
+              <span className="text-white font-black text-4xl">美味</span>
             </div>
-            <button className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-medium flex items-center gap-2 hover:shadow-lg transition-all">
-              Learn More
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="w-4 h-4"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M8.25 3.75H19.5a.75.75 0 01.75.75v11.25a.75.75 0 01-1.5 0V6.31L5.03 20.03a.75.75 0 01-1.06-1.06L17.69 5.25H8.25a.75.75 0 010-1.5z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </button>
           </div>
 
-          <div className="text-center lg:text-left" data-aos="fade-left">
-            <p className="text-primary font-medium mb-2">
-              About Us / 私たちに関しては
-            </p>
-            <h3 className="text-3xl md:text-4xl font-bold mb-6">
-              Our mission is to bring true Japanese flavours to you.
+          <div className="space-y-6" data-aos="fade-left">
+            <div className="inline-block">
+              <span className="px-6 py-2 bg-orange-100 text-orange-600 text-sm font-bold rounded-full">
+                ABOUT US / 私たちについては
+              </span>
+            </div>
+            
+            <h3 className="text-5xl md:text-6xl font-black leading-tight text-slate-900">
+              Bringing True<br />
+              <span className="bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+                Japanese Flavors
+              </span>
             </h3>
-            <p className="text-gray-600 max-w-lg mx-auto lg:mx-0">
-              We will continue to provide the experience of Omotenashi, the
-              Japanese mindset of hospitality, with our shopping and dining for
-              our customers.
+            
+            <p className="text-lg text-slate-600 leading-relaxed">
+              We continue to provide the experience of <strong>Omotenashi</strong> - the Japanese mindset of hospitality. Every dish is crafted with precision, passion, and authentic techniques passed down through generations.
             </p>
+
+            <div className="grid grid-cols-2 gap-4 pt-4">
+              {['Fresh Daily', '100% Authentic', 'Expert Chefs', 'Fast Delivery'].map((item, i) => (
+                <div key={i} className="flex items-center gap-3 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-pink-600 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                    </svg>
+                  </div>
+                  <span className="font-bold text-slate-900">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Popular Foods Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" id="menu">
-        <h2
-          className="text-3xl md:text-4xl font-bold text-center mb-12"
-          data-aos="flip-up"
-        >
-          Popular Food / 人気
-        </h2>
+      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" id="menu">
+        <div className="text-center mb-16" data-aos="flip-up">
+          <h2 className="text-6xl md:text-7xl font-black text-slate-900 mb-4">
+            Popular <span className="bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">Menu</span>
+          </h2>
+          <p className="text-xl text-slate-600 font-semibold">人気メニュー</p>
+        </div>
 
-        <div
-          className="flex overflow-x-auto gap-4 pb-4 mb-8 sushi__hide-scrollbar"
-          data-aos="fade-up"
-        >
-          {['All', 'Sushi', 'Ramen', 'Udon', 'Danggo'].map((item, index) => (
+        <div className="flex flex-wrap justify-center gap-4 mb-16" data-aos="fade-up">
+          {['All', 'Sushi 🍣', 'Ramen 🍜', 'Udon 🥢', 'Danggo 🍡'].map((item, index) => (
             <button
               key={index}
-              className={`px-6 py-3 rounded-full whitespace-nowrap ${
+              className={`px-8 py-4 rounded-2xl font-bold transition-all duration-300 hover:scale-105 ${
                 index === 0
-                  ? 'bg-gradient-to-r from-primary to-secondary text-white'
-                  : 'bg-white text-gray-700 border border-gray-200'
+                  ? 'bg-gradient-to-r from-orange-500 to-pink-600 text-white shadow-xl'
+                  : 'bg-white text-slate-700 border-2 border-slate-200 hover:border-orange-300 shadow-lg'
               }`}
             >
               {item}
@@ -173,243 +205,147 @@ const Home = () => {
           ))}
         </div>
 
-        <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-          data-aos="fade-up"
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up">
           {[
-            {
-              name: 'Chezu Sushi',
-              price: 21.0,
-              rating: 4.9,
-              image: sushi12,
-            },
-            {
-              name: 'Original Sushi',
-              price: 19.0,
-              rating: 5.0,
-              image: sushi11,
-              active: true,
-            },
-            {
-              name: 'Ramen Legendo',
-              price: 13.0,
-              rating: 4.7,
-              image: sushi10,
-            },
+            { name: 'Chezu Sushi', price: 21.0, rating: 4.9, image: sushi12 },
+            { name: 'Original Sushi', price: 19.0, rating: 5.0, image: sushi11, active: true },
+            { name: 'Ramen Legendo', price: 13.0, rating: 4.7, image: sushi10 }
           ].map((item, index) => (
             <div
               key={index}
-              className={`bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all ${
-                item.active ? 'border-2 border-primary' : 'border border-gray-100'
+              className={`group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden ${
+                item.active ? 'ring-4 ring-orange-500' : ''
               }`}
             >
-              <div className="flex justify-center mb-6">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-32 h-32 object-contain"
-                />
-              </div>
-              <h4 className="text-xl font-bold text-center mb-4">{item.name}</h4>
-              <div className="flex justify-between items-center">
-                <div className="flex items-center gap-1 bg-primary/10 px-3 py-1 rounded-full">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-4 h-4 text-yellow-500"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                      clipRule="evenodd"
-                    />
+              <div className="absolute top-6 right-6 z-10">
+                <div className="bg-white rounded-2xl px-4 py-2 shadow-lg flex items-center gap-2">
+                  <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                   </svg>
-                  <span className="text-sm font-medium">{item.rating}</span>
+                  <span className="font-black text-slate-900">{item.rating}</span>
                 </div>
-                <p className="text-lg font-bold">${item.price.toFixed(2)}</p>
+              </div>
+
+              <div className="p-8">
+                <div className="flex justify-center mb-6 bg-gradient-to-br from-orange-50 to-pink-50 rounded-3xl p-8">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-48 h-48 object-contain transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500"
+                  />
+                </div>
+                
+                <h4 className="text-2xl font-black text-slate-900 mb-4">{item.name}</h4>
+                
+                <div className="flex justify-between items-center">
+                  <p className="text-3xl font-black bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+                    ${item.price.toFixed(2)}
+                  </p>
+                  <button className="w-14 h-14 rounded-2xl bg-gradient-to-r from-orange-500 to-pink-600 flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-110">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4"/>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <button className="bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transition-all inline-flex items-center gap-2">
-            Explore Food
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="w-5 h-5"
-            >
-              <path
-                fillRule="evenodd"
-                d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z"
-                clipRule="evenodd"
-            />
+        <div className="text-center mt-16">
+          <button className="group px-12 py-6 bg-slate-900 text-white font-bold text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 inline-flex items-center gap-3">
+            Explore Full Menu
+            <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"/>
             </svg>
           </button>
         </div>
       </section>
 
       {/* Trending Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" id="trending">
-        {/* Trending Sushi */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-          <div className="text-center lg:text-left" data-aos="fade-right">
-            <p className="text-primary font-medium mb-2">
-              What's Trending / トレンド
-            </p>
-            <h3 className="text-3xl md:text-4xl font-bold mb-6">Japanese Sushi</h3>
-            <p className="text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0">
-              Feel the taste of the most delicious Sushi here.
+      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" id="trending">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+          <div className="space-y-8" data-aos="fade-right">
+            <div className="inline-block">
+              <span className="px-6 py-2 bg-pink-100 text-pink-600 text-sm font-bold rounded-full">
+                TRENDING / トレンド
+              </span>
+            </div>
+            
+            <h3 className="text-5xl md:text-6xl font-black text-slate-900">
+              Japanese<br />
+              <span className="bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+                Sushi Selection
+              </span>
+            </h3>
+            
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Discover the finest selection of authentic Japanese sushi, crafted with precision and passion.
             </p>
 
             <div className="grid grid-cols-2 gap-4">
-              {[
-                'Make Sushi',
-                'Oshizushi',
-                'Uramaki Sushi',
-                'Nigiri Sushi',
-                'Temaki Sushi',
-                'Inari Sushi',
-              ].map((item, index) => (
-                <div key={index} className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="w-4 h-4 text-white"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                        clipRule="evenodd"
-                      />
+              {['Make Sushi', 'Oshizushi', 'Uramaki Sushi', 'Nigiri Sushi', 'Temaki Sushi', 'Inari Sushi'].map((item, index) => (
+                <div key={index} className="flex items-center gap-3 bg-gradient-to-r from-orange-50 to-pink-50 p-4 rounded-2xl border-2 border-orange-200">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-pink-600 flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                     </svg>
                   </div>
-                  <span className="text-gray-700">{item}</span>
+                  <span className="font-bold text-slate-900">{item}</span>
                 </div>
               ))}
             </div>
           </div>
 
           <div className="relative" data-aos="fade-left">
-            <img
-              src={sushi5}
-              alt="Sushi"
-              className="w-full max-w-md mx-auto"
-            />
-            <div className="absolute top-1/4 -left-8 w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="w-6 h-6 text-primary"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M11.47 2.47a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06l-6.22-6.22V21a.75.75 0 01-1.5 0V4.81l-6.22 6.22a.75.75 0 11-1.06-1.06l7.5-7.5z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-            <div className="absolute bottom-1/4 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="w-6 h-6 text-primary rotate-90"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M11.47 2.47a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06l-6.22-6.22V21a.75.75 0 01-1.5 0V4.81l-6.22 6.22a.75.75 0 11-1.06-1.06l7.5-7.5z"
-                  clipRule="evenodd"
-                />
-              </svg>
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-pink-500/20 rounded-[4rem] blur-3xl"></div>
+            <div className="relative bg-gradient-to-br from-white to-orange-50 p-12 rounded-[4rem] shadow-2xl">
+              <img src={sushi5} alt="Sushi" className="w-full" />
             </div>
           </div>
         </div>
 
-        {/* Discover */}
-        <div className="text-center my-16" data-aos="zoom-in">
-          <p className="text-6xl md:text-8xl font-bold text-gray-200">Discover</p>
+        <div className="text-center my-24" data-aos="zoom-in">
+          <h2 className="text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-200 via-pink-200 to-purple-200">
+            Discover
+          </h2>
         </div>
 
-        {/* Trending Drinks */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative order-2 lg:order-1" data-aos="fade-right">
-            <img
-              src={sushi4}
-              alt="Drinks"
-              className="w-full max-w-md mx-auto"
-            />
-            <div className="absolute top-1/4 right-1/2 transform translate-x-1/2 w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="w-6 h-6 text-primary -rotate-90"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M11.47 2.47a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06l-6.22-6.22V21a.75.75 0 01-1.5 0V4.81l-6.22 6.22a.75.75 0 11-1.06-1.06l7.5-7.5z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-            <div className="absolute top-1/2 -right-8 w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="w-6 h-6 text-primary -rotate-90"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M11.47 2.47a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06l-6.22-6.22V21a.75.75 0 01-1.5 0V4.81l-6.22 6.22a.75.75 0 11-1.06-1.06l7.5-7.5z"
-                  clipRule="evenodd"
-                />
-              </svg>
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-500/20 rounded-[4rem] blur-3xl"></div>
+            <div className="relative bg-gradient-to-br from-white to-blue-50 p-12 rounded-[4rem] shadow-2xl">
+              <img src={sushi4} alt="Drinks" className="w-full" />
             </div>
           </div>
 
-          <div className="text-center lg:text-left order-1 lg:order-2" data-aos="fade-left">
-            <p className="text-primary font-medium mb-2">
-              What's Trending / トレンド
-            </p>
-            <h3 className="text-3xl md:text-4xl font-bold mb-6">Japanese Drinks</h3>
-            <p className="text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0">
-              Feel the taste of the most delicious Japanese drinks here.
+          <div className="space-y-8 order-1 lg:order-2" data-aos="fade-left">
+            <div className="inline-block">
+              <span className="px-6 py-2 bg-blue-100 text-blue-600 text-sm font-bold rounded-full">
+                TRENDING / トレンド
+              </span>
+            </div>
+            
+            <h3 className="text-5xl md:text-6xl font-black text-slate-900">
+              Japanese<br />
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Drink Collection
+              </span>
+            </h3>
+            
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Refresh yourself with our authentic Japanese beverage selection, perfect for any meal.
             </p>
 
             <div className="grid grid-cols-2 gap-4">
-              {[
-                'Oruncha',
-                'Sakura Tea',
-                'Aojiru',
-                'Ofukucha',
-                'Kombu-cha',
-                'Mugicha',
-              ].map((item, index) => (
-                <div key={index} className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="w-4 h-4 text-white"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
-                        clipRule="evenodd"
-                      />
+              {['Oruncha', 'Sakura Tea', 'Aojiru', 'Ofukucha', 'Kombu-cha', 'Mugicha'].map((item, index) => (
+                <div key={index} className="flex items-center gap-3 bg-gradient-to-r from-blue-50 to-purple-50 p-4 rounded-2xl border-2 border-blue-200">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                     </svg>
                   </div>
-                  <span className="text-gray-700">{item}</span>
+                  <span className="font-bold text-slate-900">{item}</span>
                 </div>
               ))}
             </div>
@@ -418,28 +354,46 @@ const Home = () => {
       </section>
 
       {/* Subscription Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl my-12" id="services">
-        <div className="text-center" data-aos="flip-down">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Get offers straight <br />
-            to your inbox.
-          </h2>
-          <p className="text-gray-300 mb-8" data-aos="fade-up">
-            Sign up for the Sushiking newsletter
-          </p>
+      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" id="services">
+        <div className="relative bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-[4rem] p-16 shadow-2xl overflow-hidden" data-aos="flip-down">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-500/20 to-pink-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"></div>
+          
+          <div className="relative z-10 text-center space-y-8">
+            <h2 className="text-5xl md:text-6xl font-black text-white leading-tight">
+              Get Exclusive Offers<br />
+              Straight to Your Inbox 📬
+            </h2>
+            
+            <p className="text-xl text-slate-300 font-semibold">
+              Sign up for the Sushiking newsletter and never miss a deal
+            </p>
 
-          <div
-            className="max-w-md mx-auto flex flex-col sm:flex-row gap-4"
-            data-aos="fade-up"
-          >
-            <input
-              type="text"
-              placeholder="Enter your email address"
-              className="flex-grow px-6 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-primary"
-            />
-            <button className="bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transition-all">
-              Get Started
-            </button>
+            <div className="max-w-2xl mx-auto flex flex-col sm:flex-row gap-4 pt-4">
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                className="flex-grow px-8 py-5 rounded-2xl text-lg font-semibold focus:outline-none focus:ring-4 focus:ring-orange-500 shadow-xl"
+              />
+              <button className="px-10 py-5 bg-gradient-to-r from-orange-500 to-pink-600 text-white font-bold text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all hover:scale-105 whitespace-nowrap">
+                Get Started →
+              </button>
+            </div>
+
+            <div className="flex justify-center gap-8 pt-8 text-slate-400">
+              <div className="flex items-center gap-2">
+                <svg className="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                </svg>
+                <span className="font-semibold">No spam</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                </svg>
+                <span className="font-semibold">Unsubscribe anytime</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

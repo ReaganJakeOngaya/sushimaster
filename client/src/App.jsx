@@ -9,7 +9,10 @@ import AdminOrders from './pages/Admin/Orders'
 import AdminMenu from './pages/Admin/MenuManagement'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Trending from './pages/Trending'
 import { CartProvider } from './context/CartContext';
+import Services from './pages/Services'
+import AboutUs from './pages/AboutUS'
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/menu" element={<Menu />} />
+            <Route path="/trending" element={<Trending />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/profile" element={<Profile />} />
