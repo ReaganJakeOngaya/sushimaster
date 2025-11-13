@@ -12,7 +12,7 @@ import Footer from './components/Footer'
 import Trending from './pages/Trending'
 import { CartProvider } from './context/CartContext';
 import Services from './pages/Services'
-import AboutUs from './pages/AboutUS'
+import AboutUs from './pages/AboutUs'
 
 function App() {
   return (
