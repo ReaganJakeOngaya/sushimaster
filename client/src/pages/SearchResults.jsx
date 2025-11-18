@@ -26,7 +26,7 @@ import sushi10 from '../assets/shoyu-ramen.jpg';
 import sushi11 from '../assets/Temaki-sushi.jpg';
 import sushi12 from '../assets/maki-sushi.jpg';
 import dessert1 from '../assets/mochi-dessert.jpg';
-import dessert2 from '../assets/anmitsu.jpg';
+import dessert2 from '../assets/Anmitsu.jpg';
 import dessert3 from '../assets/matcha.jpg';
 import dessert4 from '../assets/black tonkotsu.jpeg';
 import dessert5 from '../assets/Mochi-Donuts.jpg';
