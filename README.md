@@ -125,11 +125,6 @@ src/
 
 ## Design System
 
-### Color Palette
-- **Primary**: Orange (#ff6b35) - Main brand color
-- **Secondary**: Complementary colors for accents
-- **Neutral**: Gray scale for text and backgrounds
-
 ### Typography
 - Clean, modern font stack
 - Responsive text sizing
