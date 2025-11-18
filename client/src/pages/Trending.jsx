@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowTrendUp, faStar, faFaceSmile, faFireBurner } from '@fortawesome/free-solid-svg-icons';
 import {
   FaArrowLeft,
   FaFire,
@@ -8,21 +10,19 @@ import {
   FaShoppingCart,
   FaCheckCircle,
   FaPlus,
-  FaClock,
   FaHeart,
-  FaShare,
   FaChartLine,
 } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import sushi1 from '../assets/sushi-1.png';
-import sushi2 from '../assets/sushi-2.png';
-import sushi3 from '../assets/sushi-3.png';
-import sushi4 from '../assets/sushi-4.png';
-import sushi5 from '../assets/sushi-5.png';
-import sushi10 from '../assets/sushi-10.png';
-import sushi11 from '../assets/sushi-11.png';
-import sushi12 from '../assets/sushi-12.png';
+import sushi1 from '../assets/matcha.jpg';
+import sushi2 from '../assets/Mochi-Donuts.jpg';
+import sushi3 from '../assets/spicy-tuna.jpg';
+import sushi4 from '../assets/sakura-mojito.jpg';
+import sushi5 from '../assets/black tonkotsu.jpeg';
+import sushi10 from '../assets/volcano-ramen.jpg';
+import sushi11 from '../assets/Rainbow-sushi.jpg';
+import sushi12 from '../assets/Dragonroll.jpg';
 
 const Trending = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -31,8 +31,8 @@ const Trending = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 1000,
-      offset: 100,
+      duration: 800,
+      offset: 50,
     });
   }, []);
 
@@ -45,7 +45,7 @@ const Trending = () => {
       category: 'sushi',
       rating: 4.9,
       orders: 1247,
-      trend: '🔥 Hot',
+      trend: 'HOT',
       tags: ['Premium', 'Eel', 'Avocado'],
       image: sushi12,
       isNew: true,
@@ -54,11 +54,11 @@ const Trending = () => {
       id: 2,
       name: 'Volcano Ramen',
       price: 18.0,
-      description: 'Spicy volcanic broth with tender chashu and bamboo',
+      description: 'Creamy and rich, full flavor broth created from slow cooked pork bones, spiced up with spicy rayu, mayu, and togorashi.',
       category: 'ramen',
       rating: 4.8,
       orders: 987,
-      trend: '🚀 Trending',
+      trend: 'TRENDING',
       tags: ['Spicy', 'Rich Broth', 'Chashu'],
       image: sushi10,
     },
@@ -66,11 +66,11 @@ const Trending = () => {
       id: 3,
       name: 'Rainbow Sushi',
       price: 22.0,
-      description: 'Colorful assortment of fresh fish and vegetables',
+      description: 'A popular American-style, inside-out sushi roll (uramaki) consisting of a classic California roll base topped with a colorful layer of various fresh, thinly sliced fish and avocado',
       category: 'sushi',
       rating: 4.7,
       orders: 856,
-      trend: '✨ Popular',
+      trend: 'POPULAR',
       tags: ['Colorful', 'Fresh', 'Assorted'],
       image: sushi11,
       isNew: true,
@@ -83,7 +83,7 @@ const Trending = () => {
       category: 'desserts',
       rating: 4.9,
       orders: 734,
-      trend: '🌟 New',
+      trend: 'NEW',
       tags: ['Matcha', 'Dessert', 'Japanese-Italian'],
       image: sushi1,
       isNew: true,
@@ -96,7 +96,7 @@ const Trending = () => {
       category: 'drinks',
       rating: 4.6,
       orders: 621,
-      trend: '🌸 Seasonal',
+      trend: 'SEASONAL',
       tags: ['Cherry Blossom', 'Refreshing', 'Mint'],
       image: sushi4,
     },
@@ -108,7 +108,7 @@ const Trending = () => {
       category: 'sushi',
       rating: 4.8,
       orders: 1123,
-      trend: '🔥 Hot',
+      trend: 'HOT',
       tags: ['Spicy', 'Crispy', 'Tuna'],
       image: sushi3,
     },
@@ -120,7 +120,7 @@ const Trending = () => {
       category: 'ramen',
       rating: 4.7,
       orders: 892,
-      trend: '🖤 Premium',
+      trend: 'PREMIUM',
       tags: ['Black Garlic', 'Rich', 'Premium Pork'],
       image: sushi5,
     },
@@ -132,7 +132,7 @@ const Trending = () => {
       category: 'desserts',
       rating: 4.5,
       orders: 567,
-      trend: '🍩 Viral',
+      trend: 'VIRAL',
       tags: ['Mochi', 'Donuts', 'Sweet'],
       image: sushi2,
       isNew: true,
@@ -159,71 +159,66 @@ const Trending = () => {
 
   const getTrendColor = (trend) => {
     switch (trend) {
-      case '🔥 Hot': return 'from-red-500 to-orange-500';
-      case '🚀 Trending': return 'from-purple-500 to-pink-500';
-      case '✨ Popular': return 'from-yellow-500 to-orange-500';
-      case '🌟 New': return 'from-blue-500 to-cyan-500';
-      case '🌸 Seasonal': return 'from-pink-500 to-rose-500';
-      case '🖤 Premium': return 'from-gray-800 to-slate-700';
-      case '🍩 Viral': return 'from-purple-500 to-indigo-500';
-      default: return 'from-orange-500 to-pink-500';
+      case 'HOT': return 'bg-red-600';
+      case 'TRENDING': return 'bg-purple-600';
+      case 'POPULAR': return 'bg-orange-600';
+      case 'NEW': return 'bg-blue-600';
+      case 'SEASONAL': return 'bg-pink-600';
+      case 'PREMIUM': return 'bg-black';
+      case 'VIRAL': return 'bg-purple-600';
+      default: return 'bg-red-600';
     }
   };
 
   return (
-    <div className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gradient-to-b from-slate-50 via-white to-slate-50 min-h-screen">
-      {/* Background Elements */}
-      <div className="fixed top-20 left-10 w-72 h-72 bg-gradient-to-br from-red-400/15 to-orange-500/15 rounded-full blur-3xl animate-pulse"></div>
-      <div className="fixed bottom-20 right-10 w-96 h-96 bg-gradient-to-tr from-purple-400/10 to-pink-500/10 rounded-full blur-3xl animate-pulse delay-700"></div>
-      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-yellow-400/10 to-red-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-
+    <div className="pt-20 pb-8 px-4 sm:px-6 lg:px-8 max-w-8xl mx-auto bg-white min-h-screen">
       <div className="relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-16" data-aos="fade-down">
+        <div className="text-center mb-12" data-aos="fade-down">
           <Link
             to="/"
-            className="group inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-white to-orange-50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 mb-8 border border-orange-100 mx-auto"
+            className="group inline-flex items-center gap-3 px-4 py-3 bg-gray-50 hover:bg-gray-100 transition-all duration-300 mb-6 border border-gray-200 mx-auto"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-orange-500 to-pink-600 flex items-center justify-center shadow-lg">
+            <div className="w-8 h-8 bg-black flex items-center justify-center">
               <FaArrowLeft className="text-white text-sm" />
             </div>
-            <span className="font-bold text-slate-700">Back to Home</span>
+            <span className="font-bold text-gray-700">Back to Home</span>
           </Link>
 
-          <div className="inline-block mb-6">
-            <span className="px-6 py-2 bg-gradient-to-r from-red-500 to-orange-600 text-white text-sm font-bold rounded-full shadow-lg flex items-center gap-2">
+          <div className="inline-block mb-4">
+            <span className="px-4 py-2 bg-red-600 text-white text-sm font-bold flex items-center gap-2">
               <FaFire className="animate-pulse" />
               TRENDING NOW / トレンド
             </span>
           </div>
 
-          <h1 className="text-6xl md:text-8xl font-black leading-tight mb-6">
-            <span className="bg-gradient-to-r from-red-600 via-orange-600 to-pink-600 bg-clip-text text-transparent">
-              Trending
+          <h1 className="text-4xl md:text-6xl font-black leading-tight mb-4">
+            <span className="text-red-600">
+              TRENDING
             </span>
             <br />
-            <span className="text-slate-900">This Week</span>
+            <span className="text-black">THIS WEEK</span>
           </h1>
 
-          <p className="text-xl text-slate-600 font-semibold max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 font-semibold max-w-2xl mx-auto">
             Discover what everyone is loving right now! Our most popular dishes based on customer orders and ratings.
           </p>
         </div>
 
         {/* Stats Bar */}
-        <div className="max-w-4xl mx-auto mb-16" data-aos="fade-up">
-          <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-8 shadow-2xl">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div className="max-w-4xl mx-auto mb-12" data-aos="fade-up">
+          <div className="bg-black p-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
               {[
-                { number: '2.4K+', label: 'Weekly Orders', icon: '📈' },
-                { number: '4.8★', label: 'Avg Rating', icon: '⭐' },
-                { number: '98%', label: 'Happy Customers', icon: '😊' },
-                { number: '15min', label: 'Avg Prep Time', icon: '⚡' },
+                { number: '2.4K+', label: 'Weekly Orders', icon: <FontAwesomeIcon icon={faArrowTrendUp} style={{ color: 'white', height: '18px', width: '18px'}}/> },
+                { number: '4.8★', label: 'Avg Rating', icon: <FontAwesomeIcon icon={faStar} style={{ color: 'white', height: '18px', width: '18px'}} /> },
+                { number: '98%', label: 'Happy Customers', icon: <FontAwesomeIcon icon={faFaceSmile} style={{ color: 'white', height: '18px', width: '18px'}} /> },
+                { number: '15min', label: 'Avg Prep Time', icon: <FontAwesomeIcon icon={faFireBurner} style={{ color: 'white', height: '18px', width: '18px'}} /> },
               ].map((stat, i) => (
                 <div key={i} className="space-y-2">
-                  <div className="text-3xl">{stat.icon}</div>
-                  <h4 className="text-3xl font-black text-white">{stat.number}</h4>
-                  <p className="text-slate-400 font-semibold text-sm">{stat.label}</p>
+                  <div className="text-2xl">{stat.icon}</div>
+                  <h4 className="text-2xl font-black text-white">{stat.number}</h4>
+                  <p className="text-gray-400 font-semibold text-xs">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -231,38 +226,33 @@ const Trending = () => {
         </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up">
+        <div className="flex flex-wrap justify-center gap-2 mb-8" data-aos="fade-up">
           {categories.map((category) => (
             <button
               key={category.key}
               onClick={() => setActiveCategory(category.key)}
-              className={`group relative px-6 py-4 rounded-2xl font-bold transition-all duration-300 hover:scale-105 flex items-center gap-3 ${
+              className={`group relative px-4 py-3 font-bold text-sm transition-all duration-300 flex items-center gap-2 ${
                 activeCategory === category.key
-                  ? 'text-white shadow-2xl'
-                  : 'text-slate-700 bg-white shadow-lg hover:shadow-xl border-2 border-slate-200'
+                  ? 'text-white bg-red-600'
+                  : 'text-gray-700 bg-white hover:bg-gray-100 border border-gray-300'
               }`}
             >
-              {/* Background Gradient for Active State */}
-              {activeCategory === category.key && (
-                <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-orange-600 rounded-2xl"></div>
-              )}
-              
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-lg ${
+              <div className={`w-8 h-8 flex items-center justify-center ${
                 activeCategory === category.key 
-                  ? 'bg-white/20 text-white' 
-                  : 'bg-gradient-to-br from-red-50 to-orange-50 text-red-600'
+                  ? 'bg-red-700 text-white' 
+                  : 'bg-gray-100 text-gray-700'
               }`}>
-                <FaFire size={18} />
+                <FaFire size={14} />
               </div>
               
-              <span className="relative z-10 font-bold">
+              <span className="font-bold">
                 {category.label}
               </span>
               
-              <span className={`px-2 py-1 rounded-full text-xs font-black ${
+              <span className={`px-2 py-1 text-xs font-black ${
                 activeCategory === category.key
-                  ? 'bg-white/20 text-white'
-                  : 'bg-gradient-to-r from-red-500 to-orange-600 text-white'
+                  ? 'bg-red-700 text-white'
+                  : 'bg-red-600 text-white'
               }`}>
                 {category.count}
               </span>
@@ -271,57 +261,57 @@ const Trending = () => {
         </div>
 
         {/* Trending Items Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" data-aos="fade-up">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" data-aos="fade-up">
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              className="group relative bg-gradient-to-br from-white to-orange-50 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-white/50 backdrop-blur-sm"
+              className="group relative bg-white border border-gray-200 hover:border-gray-300 transition-all duration-300 overflow-hidden"
               data-aos="zoom-in"
             >
               {/* Trend Badge */}
-              <div className={`absolute top-4 left-4 z-20 px-3 py-2 rounded-2xl font-black text-xs shadow-lg bg-gradient-to-r ${getTrendColor(item.trend)} text-white`}>
+              <div className={`absolute top-2 left-2 z-20 px-2 py-1 font-black text-xs ${getTrendColor(item.trend)} text-white`}>
                 {item.trend}
               </div>
 
               {/* New Badge */}
               {item.isNew && (
-                <div className="absolute top-4 right-4 z-20 px-3 py-2 rounded-2xl font-black text-xs shadow-lg bg-gradient-to-r from-blue-500 to-cyan-500 text-white">
+                <div className="absolute top-2 right-2 z-20 px-left-2 py-1 font-black text-xs bg-blue-600 text-white">
                   NEW
                 </div>
               )}
 
               {/* Favorite Button */}
-              <button className="absolute top-4 right-16 z-20 w-8 h-8 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-200">
-                <FaHeart className="text-red-400 text-sm" />
+              <button className="absolute top-2 right-10  z-20 w-6 h-6 bg-white flex items-center justify-center border border-gray-200 hover:scale-110 transition-all duration-200">
+                <FaHeart className="text-red-400 text-xs" />
               </button>
 
               {/* Image Container */}
-              <div className="relative h-48 bg-gradient-to-br from-orange-50 to-pink-50 overflow-hidden">
+              <div className="relative h-40 bg-gray-50 overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-full object-contain p-6 transform group-hover:scale-110 group-hover:rotate-2 transition-all duration-700"
+                  className="w-full h-full object-contain p-4 transform group-hover:scale-105 transition-all duration-300"
                 />
                 
                 {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-3">
                   <button
                     onClick={() => handleAddToCart(item)}
-                    className={`w-full py-3 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all duration-300 transform hover:scale-105 ${
+                    className={`w-full py-2 font-bold flex items-center justify-center gap-2 transition-all duration-300 text-sm ${
                       addedItemId === item.id
-                        ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-lg'
-                        : 'bg-gradient-to-r from-orange-500 to-pink-600 text-white shadow-lg hover:shadow-xl'
+                        ? 'bg-green-600 text-white'
+                        : 'bg-red-600 text-white hover:bg-red-700'
                     }`}
                   >
                     {addedItemId === item.id ? (
                       <>
-                        <FaCheckCircle size={16} />
-                        Added!
+                        <FaCheckCircle size={12} />
+                        ADDED!
                       </>
                     ) : (
                       <>
-                        <FaShoppingCart size={14} />
-                        Add to Cart
+                        <FaShoppingCart size={12} />
+                        ADD TO CART
                       </>
                     )}
                   </button>
@@ -329,42 +319,38 @@ const Trending = () => {
               </div>
 
               {/* Content */}
-              <div className="p-5">
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-lg font-black text-slate-900 flex-1 pr-2">{item.name}</h3>
-                  <span className="text-lg font-black bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+              <div className="p-4">
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="text-base font-black text-black flex-1 pr-2">{item.name}</h3>
+                  <span className="text-base font-black text-red-600">
                     ${item.price.toFixed(2)}
                   </span>
                 </div>
                 
-                <p className="text-slate-600 text-sm leading-relaxed mb-3 font-medium">
+                <p className="text-gray-600 text-xs leading-relaxed mb-3 font-medium">
                   {item.description}
                 </p>
 
                 {/* Rating and Orders */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-2">
-                    <div className="flex items-center gap-1 bg-slate-100 rounded-xl px-2 py-1">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-1 bg-gray-100 px-2 py-1">
                       <FaStar className="text-yellow-500 text-xs" />
-                      <span className="text-xs font-black text-slate-900">{item.rating}</span>
+                      <span className="text-xs font-black text-black">{item.rating}</span>
                     </div>
-                    <div className="flex items-center gap-1 bg-slate-100 rounded-xl px-2 py-1">
+                    <div className="flex items-center gap-1 bg-gray-100 px-2 py-1">
                       <FaChartLine className="text-green-500 text-xs" />
-                      <span className="text-xs font-black text-slate-900">{item.orders}</span>
+                      <span className="text-xs font-black text-black">{item.orders}</span>
                     </div>
-                  </div>
-                  <div className="flex items-center gap-1 text-slate-500">
-                    <FaClock className="text-xs" />
-                    <span className="text-xs font-bold">15min</span>
                   </div>
                 </div>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-1 mb-4">
+                <div className="flex flex-wrap gap-1 mb-3">
                   {item.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="px-2 py-1 bg-gradient-to-r from-orange-100 to-pink-100 text-slate-700 text-xs font-bold rounded-full border border-orange-200"
+                      className="px-2 py-1 bg-gray-100 text-gray-700 text-xs font-bold border border-gray-300"
                     >
                       {tag}
                     </span>
@@ -374,21 +360,21 @@ const Trending = () => {
                 {/* Quick Add Button */}
                 <button
                   onClick={() => handleAddToCart(item)}
-                  className={`w-full py-3 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all duration-300 ${
+                  className={`w-full py-2 font-bold flex items-center justify-center gap-2 transition-all duration-300 text-xs ${
                     addedItemId === item.id
-                      ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-lg'
-                      : 'bg-gradient-to-r from-slate-900 to-slate-700 text-white shadow-lg hover:shadow-xl hover:scale-105'
+                      ? 'bg-green-600 text-white'
+                      : 'bg-black text-white hover:bg-red-700'
                   }`}
                 >
                   {addedItemId === item.id ? (
                     <>
-                      <FaCheckCircle size={14} />
-                      Added to Cart!
+                      <FaCheckCircle size={12} />
+                      ADDED TO CART!
                     </>
                   ) : (
                     <>
-                      <FaPlus size={12} />
-                      Quick Add
+                      <FaPlus size={10} />
+                      QUICK ADD
                     </>
                   )}
                 </button>
@@ -398,25 +384,22 @@ const Trending = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mt-16" data-aos="fade-up">
-          <div className="bg-gradient-to-r from-orange-500 to-pink-600 rounded-3xl p-12 shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-32 translate-x-32"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl translate-y-32 -translate-x-32"></div>
-            
+        <div className="text-center mt-12" data-aos="fade-up">
+          <div className="bg-red-600 p-8 relative overflow-hidden">
             <div className="relative z-10">
-              <h3 className="text-4xl md:text-5xl font-black text-white mb-4">
-                Hungry for More?
+              <h3 className="text-2xl md:text-3xl font-black text-white mb-4">
+                HUNGRY FOR MORE?
               </h3>
-              <p className="text-orange-100 text-lg font-semibold mb-8 max-w-2xl mx-auto">
+              <p className="text-red-100 text-base font-semibold mb-6 max-w-2xl mx-auto">
                 Explore our full menu and discover all the delicious options waiting for you!
               </p>
               <Link
                 to="/menu"
-                className="group inline-flex items-center gap-3 px-10 py-5 bg-white text-slate-900 font-bold text-lg rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
+                className="group inline-flex items-center gap-2 px-6 py-4 bg-white text-black font-bold text-base hover:bg-gray-100 transition-all duration-300"
               >
-                Explore Full Menu
-                <div className="w-8 h-8 rounded-full bg-gradient-to-r from-orange-500 to-pink-600 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <span className="text-white font-black text-sm">→</span>
+                EXPLORE FULL MENU
+                <div className="w-6 h-6 bg-red-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <span className="text-white font-black text-xs">→</span>
                 </div>
               </Link>
             </div>

@@ -37,8 +37,8 @@ const Checkout = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 1000,
-      offset: 100,
+      duration: 800,
+      offset: 50,
     });
   }, []);
 
@@ -89,73 +89,65 @@ const Checkout = () => {
 
   if (orderConfirmed) {
     return (
-      <div className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto bg-gradient-to-b from-slate-50 via-white to-slate-50 min-h-screen">
-        {/* Background Elements */}
-        <div className="fixed top-20 left-10 w-72 h-72 bg-gradient-to-br from-green-400/15 to-emerald-500/15 rounded-full blur-3xl animate-pulse"></div>
-        <div className="fixed bottom-20 right-10 w-96 h-96 bg-gradient-to-tr from-blue-400/10 to-cyan-500/10 rounded-full blur-3xl animate-pulse delay-700"></div>
-
-        <div className="relative z-10 text-center" data-aos="zoom-in">
-          <div className="bg-gradient-to-br from-white to-green-50 rounded-3xl shadow-2xl p-12 border border-green-100 max-w-2xl mx-auto">
-            <div className="w-32 h-32 mx-auto mb-8 rounded-3xl bg-gradient-to-r from-green-500 to-emerald-600 flex items-center justify-center shadow-2xl">
-              <FaCheckCircle className="text-white text-5xl" />
+      <div className="pt-20 pb-8 px-4 sm:px-6 lg:px-8 max-w-8xl mx-auto bg-white min-h-screen">
+        <div className="text-center" data-aos="zoom-in">
+          <div className="bg-white border border-gray-200 p-8 max-w-2xl mx-auto">
+            <div className="w-16 h-16 mx-auto mb-6 bg-green-600 flex items-center justify-center">
+              <FaCheckCircle className="text-white text-2xl" />
             </div>
             
-            <h1 className="text-5xl md:text-6xl font-black text-slate-900 mb-4">
-              Order <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Confirmed!</span>
+            <h1 className="text-3xl md:text-4xl font-black text-black mb-4">
+              ORDER <span className="text-green-600">CONFIRMED!</span>
             </h1>
             
-            <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl p-6 mb-8 shadow-lg">
-              <p className="text-white text-3xl font-black mb-2">#{orderNumber}</p>
-              <p className="text-green-100 font-semibold">Your order has been placed successfully</p>
+            <div className="bg-green-600 p-4 mb-6">
+              <p className="text-white text-2xl font-black mb-1">#{orderNumber}</p>
+              <p className="text-green-100 font-semibold text-sm">Your order has been placed successfully</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-green-100">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-green-500 to-emerald-600 flex items-center justify-center shadow-lg mx-auto mb-3">
-                  <FaClock className="text-white text-lg" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <div className="bg-gray-50 p-4 border border-gray-300">
+                <div className="w-8 h-8 bg-green-600 flex items-center justify-center mx-auto mb-2">
+                  <FaClock className="text-white text-sm" />
                 </div>
-                <p className="text-slate-600 font-semibold mb-1">Delivery Time</p>
-                <p className="text-2xl font-black text-slate-900">25-35 min</p>
+                <p className="text-gray-600 font-semibold text-xs mb-1">Delivery Time</p>
+                <p className="text-lg font-black text-black">25-35 min</p>
               </div>
               
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-green-100">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-green-500 to-emerald-600 flex items-center justify-center shadow-lg mx-auto mb-3">
-                  <FaTruck className="text-white text-lg" />
+              <div className="bg-gray-50 p-4 border border-gray-300">
+                <div className="w-8 h-8 bg-green-600 flex items-center justify-center mx-auto mb-2">
+                  <FaTruck className="text-white text-sm" />
                 </div>
-                <p className="text-slate-600 font-semibold mb-1">Total Amount</p>
-                <p className="text-2xl font-black bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                <p className="text-gray-600 font-semibold text-xs mb-1">Total Amount</p>
+                <p className="text-lg font-black text-green-600">
                   ${total.toFixed(2)}
                 </p>
               </div>
               
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-green-100">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-green-500 to-emerald-600 flex items-center justify-center shadow-lg mx-auto mb-3">
-                  <FaMapMarkerAlt className="text-white text-lg" />
+              <div className="bg-gray-50 p-4 border border-gray-300">
+                <div className="w-8 h-8 bg-green-600 flex items-center justify-center mx-auto mb-2">
+                  <FaMapMarkerAlt className="text-white text-sm" />
                 </div>
-                <p className="text-slate-600 font-semibold mb-1">Delivery To</p>
-                <p className="text-sm font-bold text-slate-900 truncate">{formData.address}</p>
+                <p className="text-gray-600 font-semibold text-xs mb-1">Delivery To</p>
+                <p className="text-xs font-bold text-black truncate">{formData.address}</p>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <button
                 onClick={() => navigate('/')}
-                className="group px-10 py-5 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold text-lg rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-3"
+                className="px-6 py-3 bg-green-600 text-white font-bold text-sm hover:bg-green-700 transition-all duration-300 flex items-center gap-2"
               >
                 Track Order
-                <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <span className="text-white font-black text-sm">→</span>
-                </div>
+                <span className="text-sm">→</span>
               </button>
               
               <Link
                 to="/menu"
-                className="group px-10 py-5 bg-white text-slate-900 font-bold text-lg rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-3 border border-green-200"
+                className="px-6 py-3 bg-black text-white font-bold text-sm hover:bg-red-700 transition-all duration-300 flex items-center gap-2"
               >
                 Order Again
-                <div className="w-8 h-8 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <span className="text-white font-black text-sm">↻</span>
-                </div>
+                <span className="text-sm">↻</span>
               </Link>
             </div>
           </div>
@@ -165,245 +157,254 @@ const Checkout = () => {
   }
 
   return (
-    <div className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gradient-to-b from-slate-50 via-white to-slate-50 min-h-screen">
-      {/* Background Elements */}
-      <div className="fixed top-20 left-10 w-72 h-72 bg-gradient-to-br from-orange-400/15 to-pink-500/15 rounded-full blur-3xl animate-pulse"></div>
-      <div className="fixed bottom-20 right-10 w-96 h-96 bg-gradient-to-tr from-blue-400/10 to-purple-500/10 rounded-full blur-3xl animate-pulse delay-700"></div>
-
-      <div className="relative z-10">
-        {/* Header Section */}
-        <div className="text-center mb-12" data-aos="fade-down">
-          <Link
-            to="/cart"
-            className="group inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-white to-orange-50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 mb-8 border border-orange-100 mx-auto"
-          >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-orange-500 to-pink-600 flex items-center justify-center shadow-lg">
-              <FaArrowLeft className="text-white text-sm" />
+    <div className="pt-20 pb-8 px-4 sm:px-6 lg:px-8 max-w-8xl mx-auto bg-white min-h-screen">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Checkout Form Section */}
+        <div className="lg:col-span-2" data-aos="fade-right">
+          {/* Header */}
+          <div className="mb-8">
+            <Link
+              to="/cart"
+              className="group inline-flex items-center gap-3 px-4 py-3 bg-gray-50 hover:bg-gray-100 transition-all duration-300 mb-6 border border-gray-200"
+            >
+              <div className="w-8 h-8 bg-black flex items-center justify-center">
+                <FaArrowLeft className="text-white text-sm" />
+              </div>
+              <span className="font-bold text-gray-700">Back to Cart</span>
+            </Link>
+            
+            <div className="text-center lg:text-left">
+              <h2 className="text-4xl md:text-5xl font-black leading-tight mb-4">
+                <span className="text-black">SECURE</span>{' '}
+                <span className="text-red-600">
+                  CHECKOUT
+                </span>
+              </h2>
+              <p className="text-lg text-gray-600 font-semibold max-w-2xl">
+                Complete your order with confidence - your payment is secure
+              </p>
             </div>
-            <span className="font-bold text-slate-700">Back to Cart</span>
-          </Link>
-
-          <div className="inline-block mb-6">
-            <span className="px-6 py-2 bg-gradient-to-r from-orange-500 to-pink-600 text-white text-sm font-bold rounded-full shadow-lg flex items-center gap-2">
-              <FaLock />
-              SECURE CHECKOUT / チェックアウト
-            </span>
           </div>
 
-          <h1 className="text-6xl md:text-7xl font-black leading-tight mb-4">
-            <span className="text-slate-900">Secure</span>{' '}
-            <span className="bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
-              Checkout
-            </span>
-          </h1>
-          <p className="text-xl text-slate-600 font-semibold">
-            Complete your order with confidence - your payment is secure
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Checkout Form */}
-          <div className="space-y-8" data-aos="fade-right">
+          <div className="space-y-6">
             {/* Delivery Information */}
-            <div className="bg-gradient-to-br from-white to-orange-50 rounded-3xl shadow-2xl p-8 border border-orange-100">
-              <h2 className="text-2xl font-black text-slate-900 mb-6 flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-orange-500 to-pink-600 flex items-center justify-center shadow-lg">
-                  <FaUser className="text-white text-lg" />
-                </div>
-                Delivery Information
-              </h2>
-              
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-slate-700 font-bold mb-2">Full Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      className="w-full p-4 bg-white border border-orange-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent font-semibold"
-                      placeholder="Enter your full name"
-                      required
-                    />
+            <div className="bg-white border border-gray-200">
+              <div className="bg-black p-4 border-b border-gray-300">
+                <h2 className="text-xl font-black text-white flex items-center gap-2">
+                  <div className="w-8 h-8 bg-red-600 flex items-center justify-center">
+                    <FaUser size={16} />
                   </div>
-                  <div>
-                    <label className="block text-slate-700 font-bold mb-2">Phone Number</label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full p-4 bg-white border border-orange-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent font-semibold"
-                      placeholder="+1 (555) 123-4567"
-                      required
-                    />
-                  </div>
-                </div>
-                
-                <div>
-                  <label className="block text-slate-700 font-bold mb-2">Email Address</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full p-4 bg-white border border-orange-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent font-semibold"
-                    placeholder="your@email.com"
-                    required
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-slate-700 font-bold mb-2">Delivery Address</label>
-                  <textarea
-                    name="address"
-                    value={formData.address}
-                    onChange={handleInputChange}
-                    className="w-full p-4 bg-white border border-orange-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent font-semibold resize-none"
-                    rows="3"
-                    placeholder="Enter your complete delivery address"
-                    required
-                  />
-                </div>
-              </form>
-            </div>
-
-            {/* Payment Information */}
-            <div className="bg-gradient-to-br from-white to-orange-50 rounded-3xl shadow-2xl p-8 border border-orange-100">
-              <h2 className="text-2xl font-black text-slate-900 mb-6 flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-orange-500 to-pink-600 flex items-center justify-center shadow-lg">
-                  <FaCreditCard className="text-white text-lg" />
-                </div>
-                Payment Method
-              </h2>
+                  DELIVERY INFORMATION
+                </h2>
+              </div>
               
-              <div className="space-y-6">
-                <div>
-                  <label className="block text-slate-700 font-bold mb-3">Select Payment Method</label>
-                  <select
-                    name="paymentMethod"
-                    value={formData.paymentMethod}
-                    onChange={handleInputChange}
-                    className="w-full p-4 bg-white border border-orange-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent font-semibold"
-                    required
-                  >
-                    <option value="credit">💳 Credit Card</option>
-                    <option value="debit">💳 Debit Card</option>
-                    <option value="paypal">💰 PayPal</option>
-                    <option value="cash">💵 Cash on Delivery</option>
-                  </select>
-                </div>
-
-                {formData.paymentMethod !== 'cash' && (
-                  <div className="space-y-4">
+              <div className="p-4">
+                <form className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-slate-700 font-bold mb-2">Card Number</label>
+                      <label className="block text-gray-700 font-bold mb-2 text-sm">Full Name</label>
                       <input
                         type="text"
-                        name="cardNumber"
-                        value={formData.cardNumber}
+                        name="name"
+                        value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full p-4 bg-white border border-orange-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent font-semibold"
-                        placeholder="1234 5678 9012 3456"
+                        className="w-full p-3 bg-white border border-gray-300 focus:outline-none focus:border-black font-semibold"
+                        placeholder="Enter your full name"
                         required
                       />
                     </div>
-                    
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-slate-700 font-bold mb-2">Expiry Date</label>
-                        <input
-                          type="text"
-                          name="expiryDate"
-                          value={formData.expiryDate}
-                          onChange={handleInputChange}
-                          className="w-full p-4 bg-white border border-orange-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent font-semibold"
-                          placeholder="MM/YY"
-                          required
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-slate-700 font-bold mb-2">CVV</label>
-                        <input
-                          type="text"
-                          name="cvv"
-                          value={formData.cvv}
-                          onChange={handleInputChange}
-                          className="w-full p-4 bg-white border border-orange-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent font-semibold"
-                          placeholder="123"
-                          required
-                        />
-                      </div>
+                    <div>
+                      <label className="block text-gray-700 font-bold mb-2 text-sm">Phone Number</label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        className="w-full p-3 bg-white border border-gray-300 focus:outline-none focus:border-black font-semibold"
+                        placeholder="+1 (555) 123-4567"
+                        required
+                      />
                     </div>
                   </div>
-                )}
+                  
+                  <div>
+                    <label className="block text-gray-700 font-bold mb-2 text-sm">Email Address</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="w-full p-3 bg-white border border-gray-300 focus:outline-none focus:border-black font-semibold"
+                      placeholder="your@email.com"
+                      required
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-gray-700 font-bold mb-2 text-sm">Delivery Address</label>
+                    <textarea
+                      name="address"
+                      value={formData.address}
+                      onChange={handleInputChange}
+                      className="w-full p-3 bg-white border border-gray-300 focus:outline-none focus:border-black font-semibold resize-none"
+                      rows="3"
+                      placeholder="Enter your complete delivery address"
+                      required
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
 
-                <div className="flex items-center gap-3 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl border border-green-200">
-                  <FaShieldAlt className="text-green-500 text-xl" />
-                  <span className="text-green-700 font-bold">Your payment information is secure and encrypted</span>
+            {/* Payment Information */}
+            <div className="bg-white border border-gray-200">
+              <div className="bg-black p-4 border-b border-gray-300">
+                <h2 className="text-xl font-black text-white flex items-center gap-2">
+                  <div className="w-8 h-8 bg-red-600 flex items-center justify-center">
+                    <FaCreditCard size={16} />
+                  </div>
+                  PAYMENT METHOD
+                </h2>
+              </div>
+              
+              <div className="p-4">
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-gray-700 font-bold mb-3 text-sm">Select Payment Method</label>
+                    <select
+                      name="paymentMethod"
+                      value={formData.paymentMethod}
+                      onChange={handleInputChange}
+                      className="w-full p-3 bg-white border border-gray-300 focus:outline-none focus:border-black font-semibold"
+                      required
+                    >
+                      <option value="credit">Credit Card</option>
+                      <option value="debit">Debit Card</option>
+                      <option value="paypal">PayPal</option>
+                      <option value="cash">Cash on Delivery</option>
+                    </select>
+                  </div>
+
+                  {formData.paymentMethod !== 'cash' && (
+                    <div className="space-y-4">
+                      <div>
+                        <label className="block text-gray-700 font-bold mb-2 text-sm">Card Number</label>
+                        <input
+                          type="text"
+                          name="cardNumber"
+                          value={formData.cardNumber}
+                          onChange={handleInputChange}
+                          className="w-full p-3 bg-white border border-gray-300 focus:outline-none focus:border-black font-semibold"
+                          placeholder="1234 5678 9012 3456"
+                          required
+                        />
+                      </div>
+                      
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-gray-700 font-bold mb-2 text-sm">Expiry Date</label>
+                          <input
+                            type="text"
+                            name="expiryDate"
+                            value={formData.expiryDate}
+                            onChange={handleInputChange}
+                            className="w-full p-3 bg-white border border-gray-300 focus:outline-none focus:border-black font-semibold"
+                            placeholder="MM/YY"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-gray-700 font-bold mb-2 text-sm">CVV</label>
+                          <input
+                            type="text"
+                            name="cvv"
+                            value={formData.cvv}
+                            onChange={handleInputChange}
+                            className="w-full p-3 bg-white border border-gray-300 focus:outline-none focus:border-black font-semibold"
+                            placeholder="123"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="flex items-center gap-3 p-3 bg-green-50 border border-green-200">
+                    <FaShieldAlt className="text-green-600 text-lg" />
+                    <span className="text-green-700 font-bold text-sm">Your payment information is secure and encrypted</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Order Summary */}
-          <div className="space-y-8" data-aos="fade-left">
-            <div className="bg-gradient-to-br from-white to-orange-50 rounded-3xl shadow-2xl p-8 border border-orange-100 sticky top-24">
-              <h2 className="text-2xl font-black text-slate-900 mb-6 flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-orange-500 to-pink-600 flex items-center justify-center shadow-lg">
-                  <FaTruck className="text-white text-lg" />
+        {/* Order Summary Section */}
+        <div className="lg:col-span-1" data-aos="fade-left">
+          <div className="sticky top-20 bg-white border border-gray-200 overflow-hidden">
+            {/* Summary Header */}
+            <div className="bg-black p-4">
+              <h2 className="text-xl font-black text-white flex items-center gap-2">
+                <div className="w-8 h-8 bg-red-600 flex items-center justify-center">
+                  <FaTruck size={16} />
                 </div>
-                Order Summary
+                ORDER SUMMARY
               </h2>
+            </div>
 
+            <div className="p-4">
               {cart.length > 0 ? (
                 <>
                   {/* Order Items */}
-                  <div className="space-y-4 mb-6 max-h-96 overflow-y-auto">
+                  <div className="max-h-80 overflow-y-auto mb-4 space-y-3">
                     {cart.map((item) => (
-                      <div key={item.id} className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-lg border border-orange-100">
-                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-50 to-pink-50 flex items-center justify-center shadow-lg flex-shrink-0">
-                          <img
-                            src={item.image}
-                            alt={item.name}
-                            className="w-14 h-14 object-contain"
-                          />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <h3 className="font-black text-slate-900 text-lg">{item.name}</h3>
-                          <p className="text-slate-600 font-semibold">
-                            ${item.price.toFixed(2)} × {item.quantity}
-                          </p>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-xl font-black bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
-                            ${(item.price * item.quantity).toFixed(2)}
-                          </p>
+                      <div key={item.id} className="bg-gray-50 p-3 border border-gray-200">
+                        <div className="flex gap-3">
+                          <div className="w-12 h-12 bg-gray-100 flex items-center justify-center flex-shrink-0 border border-gray-300">
+                            <img
+                              src={item.image}
+                              alt={item.name}
+                              className="w-10 h-10 object-contain"
+                            />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="font-black text-black text-sm truncate">{item.name}</h4>
+                            <p className="text-gray-600 font-bold text-xs">
+                              ${item.price.toFixed(2)} × {item.quantity}
+                            </p>
+                          </div>
+                          <div className="text-right">
+                            <p className="font-black text-red-600 text-sm">
+                              ${(item.price * item.quantity).toFixed(2)}
+                            </p>
+                          </div>
                         </div>
                       </div>
                     ))}
                   </div>
 
                   {/* Order Totals */}
-                  <div className="space-y-3 mb-6">
-                    <div className="flex justify-between items-center py-3 border-b border-orange-100">
-                      <span className="text-slate-600 font-semibold">Subtotal</span>
-                      <span className="font-black text-slate-900">${subtotal.toFixed(2)}</span>
-                    </div>
-                    <div className="flex justify-between items-center py-3 border-b border-orange-100">
-                      <span className="text-slate-600 font-semibold">Tax (8.5%)</span>
-                      <span className="font-black text-slate-900">${tax.toFixed(2)}</span>
-                    </div>
-                    <div className="flex justify-between items-center py-3 border-b border-orange-100">
-                      <span className="text-slate-600 font-semibold">Delivery Fee</span>
-                      <span className="font-black text-slate-900">${deliveryFee.toFixed(2)}</span>
-                    </div>
-                    <div className="flex justify-between items-center pt-4 border-t-2 border-orange-200">
-                      <span className="text-2xl font-black text-slate-900">Total</span>
-                      <span className="text-3xl font-black bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
-                        ${total.toFixed(2)}
-                      </span>
+                  <div className="bg-gray-50 p-4 border border-gray-200 mb-4">
+                    <h3 className="text-lg font-black text-black mb-3 text-center">ORDER SUMMARY</h3>
+                    <div className="space-y-2">
+                      <div className="flex justify-between items-center py-1 border-b border-gray-300">
+                        <span className="text-gray-600 font-semibold text-sm">Subtotal:</span>
+                        <span className="font-black text-black">${subtotal.toFixed(2)}</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1 border-b border-gray-300">
+                        <span className="text-gray-600 font-semibold text-sm">Tax (8.5%):</span>
+                        <span className="font-black text-black">${tax.toFixed(2)}</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1 border-b border-gray-300">
+                        <span className="text-gray-600 font-semibold text-sm">Delivery Fee:</span>
+                        <span className="font-black text-black">${deliveryFee.toFixed(2)}</span>
+                      </div>
+                      <div className="flex justify-between items-center pt-2 border-t-2 border-gray-400">
+                        <span className="text-lg font-black text-black">Total:</span>
+                        <span className="text-xl font-black text-red-600">
+                          ${total.toFixed(2)}
+                        </span>
+                      </div>
                     </div>
                   </div>
 
@@ -411,31 +412,29 @@ const Checkout = () => {
                   <button
                     onClick={handleSubmit}
                     disabled={cart.length === 0}
-                    className={`w-full py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 transition-all duration-300 ${
+                    className={`w-full py-4 font-bold text-sm flex items-center justify-center gap-2 transition-all duration-300 ${
                       cart.length === 0
-                        ? 'bg-slate-300 text-slate-500 cursor-not-allowed shadow-lg'
-                        : 'bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-lg hover:shadow-2xl hover:scale-105'
+                        ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                        : 'bg-green-600 text-white hover:bg-green-700'
                     }`}
                   >
-                    <FaLock />
-                    Place Order • ${total.toFixed(2)}
-                    <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
-                      <span className="text-white font-black text-sm">→</span>
-                    </div>
+                    <FaLock size={14} />
+                    PLACE ORDER • ${total.toFixed(2)}
+                    <span className="text-sm font-black">→</span>
                   </button>
                 </>
               ) : (
-                <div className="text-center py-12">
-                  <div className="w-24 h-24 mx-auto mb-6 rounded-3xl bg-gradient-to-br from-orange-100 to-pink-100 flex items-center justify-center shadow-lg">
-                    <FaTruck className="text-slate-400 text-4xl" />
+                <div className="text-center py-8">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 flex items-center justify-center">
+                    <FaTruck className="text-gray-400 text-2xl" />
                   </div>
-                  <h3 className="text-2xl font-black text-slate-900 mb-4">Cart is Empty</h3>
-                  <p className="text-slate-600 font-semibold mb-8">
+                  <h3 className="text-lg font-black text-black mb-2">CART IS EMPTY</h3>
+                  <p className="text-gray-600 font-medium text-sm mb-4">
                     Add some delicious items to proceed with checkout
                   </p>
                   <Link
                     to="/menu"
-                    className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-600 text-white font-bold text-lg rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-black text-white font-bold text-sm hover:bg-red-700 transition-all duration-300"
                   >
                     Browse Menu
                   </Link>

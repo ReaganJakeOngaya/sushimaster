@@ -13,6 +13,10 @@ import Trending from './pages/Trending'
 import { CartProvider } from './context/CartContext';
 import Services from './pages/Services'
 import AboutUs from './pages/AboutUs'
+import AdminProfile from './pages/Admin/AdminProfile'
+import TermsAndConditions from './pages/TermsAndConditions'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import SearchResults from './pages/SearchResults'
 
 function App() {
   return (
@@ -33,6 +37,10 @@ function App() {
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/admin/orders" element={<AdminOrders />} />
             <Route path="/admin/menu" element={<AdminMenu />} />
+            <Route path="/admin/admin-profile" element={<AdminProfile />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/search" element={<SearchResults />} />
           </Routes>
         </main>
         <Footer />
